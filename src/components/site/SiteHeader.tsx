@@ -90,7 +90,7 @@ export function SiteHeader() {
             type="button"
             onClick={() => setSearchOpen(true)}
             aria-label="Buscar productos"
-            className="grid size-11 place-items-center rounded-full transition hover:bg-muted lg:size-auto lg:gap-2 lg:rounded-full lg:border lg:border-border lg:px-4 lg:py-2 lg:[display:inline-flex]"
+            className="inline-flex size-11 items-center justify-center gap-2 rounded-full transition hover:bg-muted xl:h-10 xl:w-auto xl:border xl:border-border xl:px-4"
           >
             <Search className="size-[1.15rem]" />
             <span className="hidden text-sm text-muted-foreground xl:inline">Buscar</span>
