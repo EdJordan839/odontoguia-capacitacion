@@ -10,33 +10,53 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GestionRouteImport } from './routes/gestion'
+import { Route as ColeccionSlugRouteImport } from './routes/coleccion.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GestionRoute = GestionRouteImport.update({
+  id: '/gestion',
+  path: '/gestion',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ColeccionSlugRoute = ColeccionSlugRouteImport.update({
+  id: '/coleccion/$slug',
+  path: '/coleccion/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/gestion': typeof GestionRoute
+  '/coleccion/$slug': typeof ColeccionSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/gestion': typeof GestionRoute
+  '/coleccion/$slug': typeof ColeccionSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/gestion': typeof GestionRoute
+  '/coleccion/$slug': typeof ColeccionSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/gestion' | '/coleccion/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/gestion' | '/coleccion/$slug'
+  id: '__root__' | '/' | '/gestion' | '/coleccion/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GestionRoute: typeof GestionRoute
+  ColeccionSlugRoute: typeof ColeccionSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +68,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gestion': {
+      id: '/gestion'
+      path: '/gestion'
+      fullPath: '/gestion'
+      preLoaderRoute: typeof GestionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coleccion/$slug': {
+      id: '/coleccion/$slug'
+      path: '/coleccion/$slug'
+      fullPath: '/coleccion/$slug'
+      preLoaderRoute: typeof ColeccionSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GestionRoute: GestionRoute,
+  ColeccionSlugRoute: ColeccionSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
