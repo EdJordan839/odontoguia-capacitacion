@@ -17,3 +17,4 @@
 - Scroll animations use the shared IntersectionObserver in `Reveal` plus CSS classes gated by `html.js`, and parallax runs only on fine pointers; why: no scroll-jank on touch, content visible without JS, and `prefers-reduced-motion` disables all motion in `src/styles.css`.
 - Viewport-height sections use the `h-hero` / `h-screen-dvh` utilities (vh → svh → dvh fallbacks); why: Safari iOS toolbar resizing.
 - Pricing and cart math are pure functions in `src/lib/pricing.ts` and `src/lib/cart.ts`, covered by `src/test/pricing-cart.test.ts`.
+- Never add a root `index.html`, `src/main.tsx` or `src/App.tsx` (SPA entry files); why: the published build serves that blank shell instead of the TanStack Start app.
