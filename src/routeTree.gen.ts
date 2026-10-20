@@ -10,33 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ColeccionSlugRouteImport } from './routes/coleccion.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ColeccionSlugRoute = ColeccionSlugRouteImport.update({
+  id: '/coleccion/$slug',
+  path: '/coleccion/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/coleccion/$slug': typeof ColeccionSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/coleccion/$slug': typeof ColeccionSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/coleccion/$slug': typeof ColeccionSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/coleccion/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/coleccion/$slug'
+  id: '__root__' | '/' | '/coleccion/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ColeccionSlugRoute: typeof ColeccionSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +58,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/coleccion/$slug': {
+      id: '/coleccion/$slug'
+      path: '/coleccion/$slug'
+      fullPath: '/coleccion/$slug'
+      preLoaderRoute: typeof ColeccionSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ColeccionSlugRoute: ColeccionSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

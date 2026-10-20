@@ -11,6 +11,7 @@ interface CatalogContextValue {
   updateSpace: (id: string, patch: Partial<Space>) => void;
   addSpace: (space: Space) => void;
   removeSpace: (id: string) => void;
+  setFeaturedProductId: (id: string) => void;
   resetCatalog: () => void;
 }
 
@@ -67,11 +68,14 @@ export function CatalogProvider({ children }: { children: ReactNode }) {
   const removeSpace = useCallback((id: string) => {
     setCatalog((c) => ({ ...c, spaces: c.spaces.filter((s) => s.id !== id) }));
   }, []);
+  const setFeaturedProductId = useCallback((id: string) => {
+    setCatalog((c) => ({ ...c, featuredProductId: id }));
+  }, []);
   const resetCatalog = useCallback(() => setCatalog(SEED_CATALOG), []);
 
   const value = useMemo(
-    () => ({ catalog, updateProduct, addProduct, removeProduct, updateSpace, addSpace, removeSpace, resetCatalog }),
-    [catalog, updateProduct, addProduct, removeProduct, updateSpace, addSpace, removeSpace, resetCatalog],
+    () => ({ catalog, updateProduct, addProduct, removeProduct, updateSpace, addSpace, removeSpace, setFeaturedProductId, resetCatalog }),
+    [catalog, updateProduct, addProduct, removeProduct, updateSpace, addSpace, removeSpace, setFeaturedProductId, resetCatalog],
   );
 
   return <CatalogContext.Provider value={value}>{children}</CatalogContext.Provider>;
