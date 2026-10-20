@@ -74,12 +74,12 @@ export function MobileMenu() {
 
         <div className="pb-safe border-t border-border bg-card px-4 pt-4">
           <a
-            href="https://wa.me/525500000000"
+            href="https://wa.me/526141879067?text=Hola%20Nogara%2C%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto"
             target="_blank"
             rel="noreferrer"
-            className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary text-sm font-semibold text-primary-foreground"
+            className="flex min-h-12 items-center justify-center gap-2 rounded-full bg-emerald-600 hover:bg-emerald-500 text-sm font-semibold text-white transition-colors"
           >
-            <MessageCircle className="size-4" /> Asesoría por WhatsApp
+            <MessageCircle className="size-4" /> WhatsApp: +52 614 187 9067
           </a>
         </div>
       </SheetContent>

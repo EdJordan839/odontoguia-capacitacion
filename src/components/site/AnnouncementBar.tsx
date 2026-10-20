@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const ANNOUNCEMENTS = [
-  "NOGARA · CNC · Diseño · Soluciones a tu medida",
-  "Fabricación en corte láser y router CNC con precisión milimétrica",
-  "Precios especiales de mayoreo en reconocimientos y piezas personalizadas",
+  "NOGARA · Taller de Maquinado CNC en Chihuahua, Chih.",
+  "Cotizaciones y atención rápida por WhatsApp: +52 614 187 9067",
+  "Corte láser, router CNC, diseño paramétrico y trofeos en acrílico",
   "Envíos y entregas seguras a toda la República Mexicana",
 ];
 

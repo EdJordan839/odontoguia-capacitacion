@@ -21,6 +21,7 @@ import { MobileMenu } from "@/components/site/MobileMenu";
 import { SearchDialog } from "@/components/site/SearchDialog";
 import { CartDrawer } from "@/components/site/CartDrawer";
 import { QuickViewDialog } from "@/components/product/QuickViewDialog";
+import { WhatsAppFloatingButton } from "@/components/site/WhatsAppFloatingButton";
 import { CatalogProvider } from "@/store/catalog-store";
 import { CartProvider } from "@/store/cart-store";
 import { UIProvider } from "@/store/ui-store";
@@ -158,6 +159,7 @@ function RootComponent() {
             <SearchDialog />
             <CartDrawer />
             <QuickViewDialog />
+            <WhatsAppFloatingButton />
             <Toaster position="bottom-center" />
           </UIProvider>
         </CartProvider>

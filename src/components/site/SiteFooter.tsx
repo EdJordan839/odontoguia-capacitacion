@@ -111,17 +111,31 @@ export function SiteFooter() {
           <p className="eyebrow mb-4 text-ink-foreground/60">Contacto & Cotizaciones</p>
           <ul className="space-y-4 text-sm">
             <li>
-              <a href="https://wa.me/525500000000" target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-oak">
-                <MessageCircle className="size-4 text-oak" /> WhatsApp: Cotizar pedido
+              <a
+                href="https://wa.me/526141879067?text=Hola%20Nogara%2C%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
+              >
+                <MessageCircle className="size-4 shrink-0 text-emerald-400" /> WhatsApp: +52 614 187 9067
               </a>
             </li>
             <li>
-              <a href="mailto:contacto@nogara.mx" className="flex items-center gap-3 hover:text-oak">
-                <Mail className="size-4 text-oak" /> contacto@nogara.mx
+              <a href="tel:+526141879067" className="flex items-center gap-3 hover:text-oak transition-colors">
+                <Phone className="size-4 shrink-0 text-oak" /> +52 614 187 9067
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contacto@nogara.mx" className="flex items-center gap-3 hover:text-oak transition-colors">
+                <Mail className="size-4 shrink-0 text-oak" /> contacto@nogara.mx
               </a>
             </li>
             <li className="flex items-start gap-3 text-ink-foreground/80">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-oak" /> Taller y Fabricación: Envíos a todo México
+              <MapPin className="mt-0.5 size-4 shrink-0 text-oak" />
+              <span>
+                <strong className="block text-ink-foreground font-semibold">Taller y Showroom Nogara:</strong>
+                Av. Cristóbal Colón #4105, Complejo Industrial Chihuahua, C.P. 31136, Chihuahua, Chih., México
+              </span>
             </li>
             <li className="flex items-start gap-3 text-ink-foreground/80">
               <Clock className="mt-0.5 size-4 shrink-0 text-oak" /> Lunes a sábado · 09:00 – 19:00 hrs
