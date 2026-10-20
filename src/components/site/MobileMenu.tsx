@@ -15,7 +15,7 @@ export function MobileMenu() {
     <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
       <SheetContent
         side="left"
-        className="h-screen-dvh flex w-[88vw] max-w-sm flex-col gap-0 overflow-hidden border-r-0 bg-background p-0 [&>button:last-child]:hidden"
+        className="h-screen-dvh flex w-[88vw] max-w-sm flex-col gap-0 overflow-hidden border-r-0 bg-background p-0 [&>button:first-child]:hidden"
       >
         <SheetTitle className="sr-only">Menú</SheetTitle>
         <SheetDescription className="sr-only">Navegación por categorías y espacios</SheetDescription>

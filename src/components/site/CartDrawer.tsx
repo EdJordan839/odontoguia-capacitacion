@@ -18,7 +18,7 @@ export function CartDrawer() {
     <Sheet open={isOpen} onOpenChange={setOpen}>
       <SheetContent
         side="right"
-        className="h-screen-dvh flex w-full max-w-none flex-col gap-0 border-l-0 bg-background p-0 sm:max-w-md [&>button:last-child]:hidden"
+        className="h-screen-dvh flex w-full max-w-none flex-col gap-0 border-l-0 bg-background p-0 sm:max-w-md [&>button:first-child]:hidden"
       >
         <div className="flex items-center justify-between border-b border-border px-5 py-4">
           <div>
