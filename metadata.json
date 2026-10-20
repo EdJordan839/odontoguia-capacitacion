@@ -1,0 +1,6 @@
+{
+  "name": "Parota Wood and Wonder",
+  "description": "Muebles y piezas de arte exclusivas en madera de parota.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
