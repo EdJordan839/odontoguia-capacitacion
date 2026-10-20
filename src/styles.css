@@ -265,25 +265,25 @@
   transform: none;
 }
 
-.js .reveal-clip {
+.js .reveal-clip > .reveal-clip-inner {
   clip-path: inset(0 0 100% 0 round var(--clip-radius, 1.25rem));
   transition: clip-path 1.4s var(--ease-out-expo);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-.js .reveal-clip > img,
-.js .reveal-clip > .reveal-media {
+.js .reveal-clip > .reveal-clip-inner > img,
+.js .reveal-clip > .reveal-clip-inner > .reveal-media {
   transform: scale(1.18);
   transition: transform 1.8s var(--ease-out-expo);
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-.js .reveal-clip.is-visible {
+.js .reveal-clip.is-visible > .reveal-clip-inner {
   clip-path: inset(0 0 0 0 round var(--clip-radius, 1.25rem));
 }
 
-.js .reveal-clip.is-visible > img,
-.js .reveal-clip.is-visible > .reveal-media {
+.js .reveal-clip.is-visible > .reveal-clip-inner > img,
+.js .reveal-clip.is-visible > .reveal-clip-inner > .reveal-media {
   transform: scale(1);
 }
 
@@ -363,9 +363,9 @@
 
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
-  .js .reveal-clip,
-  .js .reveal-clip > img,
-  .js .reveal-clip > .reveal-media {
+  .js .reveal-clip > .reveal-clip-inner,
+  .js .reveal-clip > .reveal-clip-inner > img,
+  .js .reveal-clip > .reveal-clip-inner > .reveal-media {
     opacity: 1 !important;
     transform: none !important;
     clip-path: none !important;
