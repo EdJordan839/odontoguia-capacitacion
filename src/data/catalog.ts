@@ -43,13 +43,13 @@ export interface Product {
   categoryId: string;
   spaceIds: string[];
   price: number;
-  compareAtPrice?: number;
+  compareAtPrice?: number | undefined;
   image: string;
   /** Imagen por tipo de madera (opcional). */
   woodImages?: Partial<Record<WoodId, string>>;
   woods: WoodId[];
   sizes?: SizeOption[];
-  badge?: string;
+  badge?: string | undefined;
   description: string;
   leadTime: string;
 }

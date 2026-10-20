@@ -3,8 +3,8 @@ import type { WoodId } from "@/data/catalog";
 export interface CartLine {
   key: string;
   productId: string;
-  woodId?: WoodId;
-  sizeId?: string;
+  woodId?: WoodId | undefined;
+  sizeId?: string | undefined;
   unitPrice: number;
   quantity: number;
 }

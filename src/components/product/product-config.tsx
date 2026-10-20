@@ -66,7 +66,7 @@ export function WoodSelector({
   size = "md",
 }: {
   woods: WoodOption[];
-  value?: WoodId;
+  value?: WoodId | undefined;
   onChange: (id: WoodId) => void;
   size?: "sm" | "md";
 }) {
@@ -111,7 +111,7 @@ export function SizeSelector({
   onChange,
 }: {
   product: Product;
-  value?: string;
+  value?: string | undefined;
   onChange: (id: string) => void;
 }) {
   if (!product.sizes?.length) return null;
@@ -145,7 +145,7 @@ export function SizeSelector({
   );
 }
 
-export function PriceTag({ price, compareAt, className }: { price: number; compareAt?: number; className?: string }) {
+export function PriceTag({ price, compareAt, className }: { price: number; compareAt?: number | undefined; className?: string }) {
   return (
     <div className={cn("flex items-baseline gap-2", className)}>
       <span className="tabular-nums">{formatMXN(price)}</span>
