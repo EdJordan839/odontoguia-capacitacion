@@ -28,6 +28,6 @@ describe("carrito", () => {
 
   it("elimina la línea cuando la cantidad llega a cero", () => {
     const lines = addLine([], { productId: "x", unitPrice: 100 });
-    expect(setLineQuantity(lines, lines[0].key, 0)).toHaveLength(0);
+    expect(setLineQuantity(lines, lines[0]!.key, 0)).toHaveLength(0);
   });
 });
