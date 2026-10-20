@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { CATALOG_VERSION, SEED_CATALOG, type Catalog, type Product, type Space } from "@/data/catalog";
 
-const STORAGE_KEY = "casaveta.catalog.v1";
+const STORAGE_KEY = "nogara.catalog.v2";
 
 interface CatalogContextValue {
   catalog: Catalog;

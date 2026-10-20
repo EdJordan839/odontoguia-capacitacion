@@ -3,16 +3,15 @@ import { SEED_CATALOG } from "@/data/catalog";
 import { addLine, cartCount, cartSubtotal, setLineQuantity } from "@/lib/cart";
 import { computePrice } from "@/lib/pricing";
 
-const mesa = SEED_CATALOG.products.find((p) => p.id === "mesa-alameda")!;
+const repisa = SEED_CATALOG.products.find((p) => p.id === "repisas-decorativas-parametricas")!;
 
 describe("precio configurable", () => {
-  it("roble en 4 personas conserva el precio base", () => {
-    expect(computePrice(mesa, SEED_CATALOG.woods, "roble", "4p")).toBe(38900);
+  it("medida estándar conserva el precio base", () => {
+    expect(computePrice(repisa, SEED_CATALOG.woods, "nogal", "std")).toBe(1850);
   });
 
-  it("aplica medida y factor de madera", () => {
-    // (38,900 + 6,500) × 1.12 = 50,848 → redondeo a decenas
-    expect(computePrice(mesa, SEED_CATALOG.woods, "nogal", "6p")).toBe(50850);
+  it("aplica medida adicional", () => {
+    expect(computePrice(repisa, SEED_CATALOG.woods, "nogal", "grande")).toBe(2450);
   });
 });
 

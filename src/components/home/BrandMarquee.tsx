@@ -1,15 +1,15 @@
 import { Sparkle } from "lucide-react";
 
 const VALUES = [
-  "Madera maciza de origen legal",
-  "Hecho a mano en México",
-  "Garantía estructural de 5 años",
-  "Envío e instalación a domicilio",
-  "Acabados libres de tóxicos",
-  "+2,500 hogares amueblados",
+  "Corte Láser y Router CNC de Alta Precisión",
+  "Diseño Paramétrico Exclusivo",
+  "Reconocimientos y Trofeos en Acrílico y Espejo",
+  "Grill Boxes Térmicos para Asados",
+  "Precios Especiales de Mayoreo",
+  "Envíos Seguros a Todo México",
 ];
 
-const PHRASES = ["Nogal", "Parota", "Roble", "Oficio", "Calidez", "Permanencia"];
+const PHRASES = ["CNC", "Diseño", "Soluciones", "Precisión", "Acrílico", "Paramétrico", "Calidad", "NOGARA"];
 
 function Row({ items, variant }: { items: string[]; variant: "solid" | "display" }) {
   const group = (hidden: boolean) => (
@@ -49,7 +49,7 @@ function Row({ items, variant }: { items: string[]; variant: "solid" | "display"
 
 export function BrandMarquee() {
   return (
-    <section aria-label="Valores de la marca" className="overflow-hidden bg-olive-deep py-8 text-cream sm:py-10">
+    <section aria-label="Valores de Nogara" className="overflow-hidden bg-olive-deep py-8 text-cream sm:py-10">
       <Row items={VALUES} variant="solid" />
       <div className="my-6 h-px bg-cream/15 sm:my-8" />
       <Row items={PHRASES} variant="display" />

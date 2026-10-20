@@ -88,13 +88,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#3b3329" },
-      { title: "Casa Veta — Mobiliario de madera maciza hecho en México" },
+      { name: "theme-color", content: "#282c1e" },
+      { title: "NOGARA — CNC · Diseño · Soluciones" },
       {
         name: "description",
-        content: "Mobiliario y decoración en nogal, parota y roble, diseñados y fabricados a mano en México.",
+        content: "Corte CNC router y láser, diseño paramétrico, reconocimientos en acrílico y soluciones personalizadas.",
       },
-      { property: "og:site_name", content: "Casa Veta" },
+      { property: "og:site_name", content: "NOGARA" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

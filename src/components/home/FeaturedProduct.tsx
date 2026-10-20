@@ -14,7 +14,9 @@ export function FeaturedProduct() {
 
   const wood = catalog.woods.find((w) => w.id === cfg.woodId);
   const size = product.sizes?.find((s) => s.id === cfg.sizeId);
-  const gallery = product.woods.map((w) => ({ id: w, src: resolveImage(product.woodImages?.[w] ?? product.image) }));
+  const gallery = product.woods.length > 0
+    ? product.woods.map((w) => ({ id: w, src: resolveImage(product.woodImages?.[w] ?? product.image) }))
+    : [{ id: "default", src: resolveImage(product.image) }];
 
   return (
     <section id="pieza-insignia" className="scroll-mt-24 bg-secondary/70 py-20 lg:py-32">
@@ -31,10 +33,10 @@ export function FeaturedProduct() {
                     loading="lazy"
                     width={1280}
                     height={960}
-                    aria-hidden={g.id !== cfg.woodId}
+                    aria-hidden={g.id !== cfg.woodId && gallery.length > 1}
                     className={cn(
                       "absolute inset-0 size-full object-cover transition-[opacity,transform] duration-[900ms] ease-[var(--ease-out-expo)]",
-                      g.id === cfg.woodId ? "scale-100 opacity-100" : "scale-[1.03] opacity-0",
+                      g.id === cfg.woodId || gallery.length === 1 ? "scale-100 opacity-100" : "scale-[1.03] opacity-0",
                     )}
                   />
                 ))}
@@ -49,7 +51,7 @@ export function FeaturedProduct() {
               <div key={wood.id} className="animate-fade-soft mt-5 flex items-start gap-4 px-1">
                 <span className="font-display text-5xl leading-none text-parota/80">“</span>
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  <strong className="font-semibold text-foreground">{wood.name}</strong> de {wood.origin}. {wood.description}
+                  <strong className="font-semibold text-foreground">{wood.name}</strong> · {wood.description}
                 </p>
               </div>
             )}
@@ -58,31 +60,35 @@ export function FeaturedProduct() {
 
         <div className="flex flex-col gap-8 lg:col-span-5 lg:py-6">
           <Reveal>
-            <p className="eyebrow text-parota">Pieza insignia · Diseña la tuya</p>
+            <p className="eyebrow text-parota">Diseño Insignia · CNC Nogara</p>
             <h2 className="mt-3 text-[clamp(2.25rem,4.6vw,3.75rem)] font-medium leading-[0.98]">{product.name}</h2>
             <p className="mt-4 max-w-md leading-relaxed text-muted-foreground">{product.description}</p>
           </Reveal>
 
-          <Reveal delay={80}>
-            <div className="mb-3 flex items-baseline justify-between">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">1 · Elige la madera</p>
-              <p className="text-sm font-medium">{wood?.name}</p>
-            </div>
-            <WoodSelector woods={cfg.woods} value={cfg.woodId} onChange={cfg.setWoodId} />
-          </Reveal>
+          {cfg.woods.length > 0 && (
+            <Reveal delay={80}>
+              <div className="mb-3 flex items-baseline justify-between">
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">1 · Elige el acabado</p>
+                <p className="text-sm font-medium">{wood?.name}</p>
+              </div>
+              <WoodSelector woods={cfg.woods} value={cfg.woodId} onChange={cfg.setWoodId} />
+            </Reveal>
+          )}
 
-          <Reveal delay={140}>
-            <div className="mb-3 flex items-baseline justify-between">
-              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">2 · Elige la medida</p>
-              <p className="text-sm font-medium">{size?.dimensions}</p>
-            </div>
-            <SizeSelector product={product} value={cfg.sizeId} onChange={cfg.setSizeId} />
-          </Reveal>
+          {product.sizes && product.sizes.length > 0 && (
+            <Reveal delay={140}>
+              <div className="mb-3 flex items-baseline justify-between">
+                <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">2 · Elige la medida</p>
+                <p className="text-sm font-medium">{size?.dimensions}</p>
+              </div>
+              <SizeSelector product={product} value={cfg.sizeId} onChange={cfg.setSizeId} />
+            </Reveal>
+          )}
 
           <Reveal delay={200} className="rounded-[1.25rem] border border-border bg-card p-5 sm:p-6">
             <div className="flex items-end justify-between gap-4">
               <div>
-                <p className="text-xs text-muted-foreground">Tu configuración</p>
+                <p className="text-xs text-muted-foreground">Precio de tu selección</p>
                 <PriceTag
                   key={cfg.price}
                   price={cfg.price}
@@ -91,7 +97,7 @@ export function FeaturedProduct() {
                 />
               </div>
               <p className="text-right text-xs text-muted-foreground">
-                o 12 MSI de
+                o 12 mensualidades de
                 <br />
                 <span className="font-semibold text-foreground tabular-nums">
                   {new Intl.NumberFormat("es-MX", { style: "currency", currency: "MXN", maximumFractionDigits: 0 }).format(
@@ -110,14 +116,14 @@ export function FeaturedProduct() {
               </button>
               <button
                 type="button"
-                onClick={() => toast("Te contactaremos para agendar tu visita al showroom.")}
+                onClick={() => toast("Nos comunicaremos contigo para personalizar tu pedido.")}
                 className="flex min-h-13 items-center justify-center gap-2 rounded-full border border-border px-6 py-4 text-sm font-semibold transition hover:border-foreground"
               >
-                <CalendarDays className="size-4" /> Agendar visita
+                <CalendarDays className="size-4" /> Solicitar cotización
               </button>
             </div>
             <ul className="mt-5 grid gap-2 text-sm text-muted-foreground sm:grid-cols-2">
-              {["Madera maciza de origen legal", "Acabado en aceite natural", product.leadTime, "Garantía estructural de 5 años"].map(
+              {["Corte CNC de alta precisión", "Acabados de calidad profesional", product.leadTime, "Garantía de satisfacción Nogara"].map(
                 (t) => (
                   <li key={t} className="flex items-center gap-2">
                     <Check className="size-4 shrink-0 text-olive" /> {t}

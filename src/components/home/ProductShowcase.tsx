@@ -10,19 +10,17 @@ export function ProductShowcase() {
   const { catalog } = useCatalog();
   const [filter, setFilter] = useState<string>("todo");
   const products = catalog.products
-    .filter((p) => p.id !== catalog.featuredProductId)
-    .filter((p) => filter === "todo" || p.categoryId === filter)
-    .slice(0, 8);
+    .filter((p) => filter === "todo" || p.categoryId === filter);
 
-  const chips = [{ id: "todo", name: "Todo" }, ...catalog.categories];
+  const chips = [{ id: "todo", name: "Todos los productos" }, ...catalog.categories];
 
   return (
     <section className="mx-auto max-w-[1440px] px-4 py-20 sm:px-6 lg:px-10 lg:py-32">
       <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
         <Reveal>
-          <p className="eyebrow text-parota">Vitrina</p>
+          <p className="eyebrow text-parota">Catálogo Nogara</p>
           <h2 className="mt-3 text-[clamp(2.25rem,5vw,4.25rem)] font-medium leading-[0.98]">
-            Favoritos del <em className="text-olive">taller</em>
+            Productos destacados y <em className="text-olive">soluciones CNC</em>
           </h2>
         </Reveal>
         <Reveal delay={100}>
@@ -31,7 +29,7 @@ export function ProductShowcase() {
             params={{ slug: filter }}
             className="group inline-flex items-center gap-2 text-sm font-semibold"
           >
-            Ver todo el catálogo
+            Ver catálogo completo
             <span className="grid size-10 place-items-center rounded-full border border-border transition group-hover:border-foreground group-hover:bg-foreground group-hover:text-background">
               <ArrowRight className="size-4" />
             </span>
@@ -65,7 +63,7 @@ export function ProductShowcase() {
           </Reveal>
         ))}
         {products.length === 0 && (
-          <p className="col-span-full py-16 text-center text-muted-foreground">Pronto tendremos piezas en esta categoría.</p>
+          <p className="col-span-full py-16 text-center text-muted-foreground">Pronto tendremos más piezas en esta categoría.</p>
         )}
       </div>
     </section>

@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const ANNOUNCEMENTS = [
-  "Envío sin costo en CDMX y área metropolitana en compras desde $15,000",
-  "Hasta 12 meses sin intereses con tarjetas participantes",
-  "Hecho a mano en México · Garantía estructural de 5 años",
+  "NOGARA · CNC · Diseño · Soluciones a tu medida",
+  "Fabricación en corte láser y router CNC con precisión milimétrica",
+  "Precios especiales de mayoreo en reconocimientos y piezas personalizadas",
+  "Envíos y entregas seguras a toda la República Mexicana",
 ];
 
 export function AnnouncementBar() {

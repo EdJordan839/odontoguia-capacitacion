@@ -18,12 +18,12 @@ function titleFor(slug: string) {
 export const Route = createFileRoute("/coleccion/$slug")({
   head: ({ params }) => {
     const title = titleFor(params.slug);
-    const description = `Explora ${title.toLowerCase()} de Casa Veta: piezas de madera maciza en nogal, parota y roble hechas a mano en México.`;
+    const description = `Explora ${title.toLowerCase()} de NOGARA: piezas de corte CNC, diseño paramétrico, reconocimientos y soluciones a la medida.`;
     return {
       meta: [
-        { title: `${title} — Casa Veta` },
+        { title: `${title} — NOGARA` },
         { name: "description", content: description },
-        { property: "og:title", content: `${title} — Casa Veta` },
+        { property: "og:title", content: `${title} — NOGARA` },
         { property: "og:description", content: description },
         { property: "og:type", content: "website" },
         { name: "twitter:card", content: "summary_large_image" },
@@ -51,7 +51,7 @@ function CollectionPage() {
   const title = slug === "todo" ? "Catálogo completo" : (category?.name ?? space?.name ?? "Colección");
   const subtitle =
     slug === "todo"
-      ? "Todas nuestras piezas de madera maciza, en un solo lugar."
+      ? "Todas nuestras soluciones de corte CNC, diseño paramétrico y reconocimientos en un solo lugar."
       : (category?.description ?? space?.tagline ?? "Esta colección no está disponible por ahora.");
   const cover = space?.image ?? (products[0]?.image || "hero");
 

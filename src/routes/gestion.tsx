@@ -66,10 +66,10 @@ function GestionPage() {
       categoryId: catalog.categories[0]?.id ?? "",
       spaceIds: [],
       price: 1000,
-      image: "p-silla",
-      woods: ["roble"],
+      image: "p-repisas",
+      woods: ["nogal"],
       description: "Descripción de la pieza.",
-      leadTime: "Envío en 2 semanas",
+      leadTime: "Fabricación en 3-5 días",
     };
     addProduct(p);
     toast.success("Producto agregado");

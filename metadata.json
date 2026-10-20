@@ -1,6 +1,6 @@
 {
-  "name": "Parota Wood and Wonder",
-  "description": "Muebles y piezas de arte exclusivas en madera de parota.",
+  "name": "NOGARA",
+  "description": "NOGARA — CNC · Diseño · Soluciones. Corte láser y router, arquitectura paramétrica, trofeos y reconocimientos.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

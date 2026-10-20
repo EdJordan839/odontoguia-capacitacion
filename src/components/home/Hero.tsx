@@ -1,9 +1,9 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight } from "lucide-react";
-import hero from "@/assets/hero.jpg";
+import pRepisas from "@/assets/p-repisas.jpg";
 import { useParallax } from "@/hooks/use-parallax";
 
-const LINES = ["Madera que", "cuenta historias,", "hecha para quedarse."];
+const LINES = ["Precisión CNC,", "diseño y piezas", "a tu medida."];
 
 export function Hero() {
   const ref = useParallax<HTMLDivElement>(0.22);
@@ -16,20 +16,20 @@ export function Hero() {
           style={{ transform: "translate3d(0, var(--parallax, 0px), 0)" }}
         >
           <img
-            src={hero}
-            alt="Sala con credenza de nogal, mesa de centro de parota y sofá verde olivo"
+            src={pRepisas}
+            alt="Muro con repisa decorativa paramétrica y logo Nogara CNC"
             width={1920}
             height={1088}
             fetchPriority="high"
-            className="animate-hero-zoom size-full object-cover object-[70%_center]"
+            className="animate-hero-zoom size-full object-cover object-center"
           />
         </div>
-        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/75 via-ink/35 to-transparent" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-ink/90 via-ink/60 to-ink/30" />
         <div aria-hidden className="absolute inset-0 -z-10 bg-hero-fade" />
 
         <div className="relative mx-auto flex w-full max-w-[1440px] flex-col justify-end px-5 pb-8 pt-24 text-ink-foreground sm:px-10 sm:pb-12 lg:px-16 lg:pb-16">
           <p className="animate-fade-soft eyebrow mb-5 text-oak" style={{ ["--line-delay" as string]: "200ms" }}>
-            Colección Otoño · 2026
+            NOGARA · CNC · Diseño · Soluciones
           </p>
           <h1 className="max-w-4xl text-[clamp(2.75rem,8.5vw,7.25rem)] font-medium leading-[0.92]">
             {LINES.map((line, i) => (
@@ -41,10 +41,10 @@ export function Hero() {
             ))}
           </h1>
           <p
-            className="animate-fade-soft mt-6 max-w-md text-base leading-relaxed text-ink-foreground/85 sm:text-lg"
+            className="animate-fade-soft mt-6 max-w-xl text-base leading-relaxed text-ink-foreground/85 sm:text-lg"
             style={{ ["--line-delay" as string]: "850ms" }}
           >
-            Mobiliario y objetos de madera maciza — nogal, parota y roble — diseñados y fabricados a mano en talleres mexicanos.
+            Maquinado router y corte láser CNC, arquitectura paramétrica, placas de reconocimiento de prestigio y soluciones a la medida para proyectos comerciales y residenciales.
           </p>
           <div
             className="animate-fade-soft mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
@@ -55,14 +55,14 @@ export function Hero() {
               params={{ slug: "todo" }}
               className="group inline-flex min-h-13 items-center justify-center gap-3 rounded-full bg-cream px-7 py-4 text-sm font-semibold text-foreground transition hover:bg-oak"
             >
-              Explorar colección
+              Explorar productos
               <ArrowRight className="size-4 transition-transform duration-500 group-hover:translate-x-1" />
             </Link>
             <a
               href="#pieza-insignia"
               className="inline-flex min-h-13 items-center justify-center gap-2 rounded-full border border-ink-foreground/40 px-7 py-4 text-sm font-semibold backdrop-blur-sm transition hover:border-ink-foreground hover:bg-ink-foreground/10"
             >
-              Diseña tu mesa
+              Ver repisa paramétrica
             </a>
           </div>
 
@@ -72,9 +72,9 @@ export function Hero() {
           >
             <dl className="flex gap-12">
               {[
-                ["18", "años de oficio"],
-                ["3", "maderas nobles"],
-                ["5 años", "de garantía"],
+                ["100%", "Precisión CNC"],
+                ["Láser & Router", "Tecnología aplicada"],
+                ["Mayoreo", "Precios especiales"],
               ].map(([n, l]) => (
                 <div key={l}>
                   <dt className="sr-only">{l}</dt>
