@@ -77,7 +77,7 @@ export function CartDrawer() {
                       src={resolveImage(img)}
                       alt={product.name}
                       loading="lazy"
-                      className="aspect-[4/5] w-20 shrink-0 rounded-xl bg-sand object-cover"
+                      className="aspect-[4/5] w-20 shrink-0 rounded-xl bg-sand object-contain"
                     />
                     <div className="flex min-w-0 flex-1 flex-col">
                       <div className="flex items-start justify-between gap-2">

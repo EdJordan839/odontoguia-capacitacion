@@ -47,7 +47,7 @@ export function ProductCard({ product, priority = false }: { product: Product; p
             loading={priority ? "eager" : "lazy"}
             width={800}
             height={1000}
-            className="size-full object-cover transition-transform duration-[1400ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
+            className="size-full object-contain transition-transform duration-[1400ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.06]"
           />
         </button>
         {product.badge && (

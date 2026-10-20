@@ -27,7 +27,7 @@ function QuickViewBody({ product, onClose }: { product: Product; onClose: () => 
   return (
     <div className="grid md:grid-cols-2">
       <div className="relative aspect-[4/5] bg-sand md:aspect-auto md:min-h-[560px]">
-        <img key={cfg.image} src={cfg.image} alt={product.name} className="animate-fade-soft absolute inset-0 size-full object-cover" />
+        <img key={cfg.image} src={cfg.image} alt={product.name} className="animate-fade-soft absolute inset-0 size-full object-contain" />
         <button
           type="button"
           onClick={onClose}
