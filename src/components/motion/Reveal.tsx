@@ -1,7 +1,7 @@
 import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
-type RevealVariant = "up" | "clip";
+type RevealVariant = "up" | "left" | "right" | "zoom" | "clip";
 
 interface RevealProps {
   as?: ElementType;
@@ -25,17 +25,11 @@ function getObserver() {
         }
       }
     },
-    { rootMargin: "0px 0px -8% 0px", threshold: 0.12 },
+    { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
   );
   return sharedObserver;
 }
 
-/**
- * Revela su contenido al entrar en pantalla. Usa un único IntersectionObserver
- * (sin listeners de scroll) para no interferir con el desplazamiento táctil.
- * Con prefers-reduced-motion el CSS deja todo visible y estático.
- * Variante "clip": los hijos deben posicionarse en absoluto (llenan el marco).
- */
 export function Reveal({ as: Tag = "div", variant = "up", delay = 0, className, style, children }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
 
@@ -51,15 +45,24 @@ export function Reveal({ as: Tag = "div", variant = "up", delay = 0, className, 
     return () => observer.unobserve(el);
   }, []);
 
+  const variantClass =
+    variant === "clip"
+      ? "reveal-clip relative"
+      : variant === "left"
+      ? "reveal-left"
+      : variant === "right"
+      ? "reveal-right"
+      : variant === "zoom"
+      ? "reveal-zoom"
+      : "reveal";
+
   return (
     <Tag
       ref={ref}
-      className={cn(variant === "clip" ? "reveal-clip relative" : "reveal", className)}
+      className={cn(variantClass, className)}
       style={{ ...style, ["--reveal-delay" as string]: `${delay}ms` }}
     >
       {variant === "clip" ? (
-        // El recorte se aplica a una capa interna: el elemento observado no
-        // se recorta, así IntersectionObserver puede detectarlo.
         <div className="reveal-clip-inner absolute inset-0">{children}</div>
       ) : (
         children

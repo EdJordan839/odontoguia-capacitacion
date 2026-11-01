@@ -11,7 +11,7 @@ export function SpacesExplorer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left Column — Executive Styling Moodboard Image */}
           <div className="lg:col-span-4">
-            <Reveal variant="clip" className="overflow-hidden aspect-[4/5] rounded-none shadow-soft">
+            <Reveal variant="left" className="overflow-hidden aspect-[4/5] rounded-none shadow-soft">
               <img
                 src={resolveImage("executive-styling")}
                 alt="Planificación editorial de vestuario ejecutivo y paleta de colores"
@@ -23,7 +23,7 @@ export function SpacesExplorer() {
 
           {/* Center Column — Editorial Value Proposition Quote */}
           <div className="lg:col-span-4 flex flex-col items-center text-center px-4 py-6">
-            <Reveal>
+            <Reveal variant="up" delay={100}>
               <span className="eyebrow text-champagne font-bold mb-4 block">FILOSOFÍA DE MARCA</span>
               <h2 className="font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-light leading-snug text-obsidian">
                 Diseñamos planes de imagen pública e identidad estratégica que elevan tu estatus y conectan con tu audiencia de alto nivel.
@@ -45,7 +45,7 @@ export function SpacesExplorer() {
 
           {/* Right Column — Luxury Watch & Suit Image */}
           <div className="lg:col-span-4">
-            <Reveal variant="clip" delay={120} className="overflow-hidden aspect-[4/5] rounded-none shadow-soft">
+            <Reveal variant="right" delay={200} className="overflow-hidden aspect-[4/5] rounded-none shadow-soft">
               <img
                 src={resolveImage("luxury-watch")}
                 alt="Reloj de lujo y traje ejecutivo de sartoría"

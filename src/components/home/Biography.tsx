@@ -7,12 +7,12 @@ export function Biography() {
   const { openBookingModal } = useUI();
 
   return (
-    <section id="biografia" className="scroll-mt-24 bg-obsidian text-cream py-20 lg:py-32">
+    <section id="biografia" className="scroll-mt-24 bg-obsidian text-cream py-20 lg:py-32 border-t border-cream/10">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Clean Single Editorial Portrait Frame */}
           <div className="lg:col-span-5">
-            <Reveal variant="clip" className="overflow-hidden aspect-[3/4] shadow-lift border border-cream/15">
+            <Reveal variant="left" className="overflow-hidden aspect-[3/4] shadow-lift border border-cream/15">
               <img
                 src={consultantPortrait}
                 alt="Consultora de Imagen y Marca Personal — YES I'AM"
@@ -24,7 +24,7 @@ export function Biography() {
 
           {/* Biography & Details */}
           <div className="lg:col-span-7 flex flex-col items-start pl-0 lg:pl-8">
-            <Reveal>
+            <Reveal variant="right" delay={150}>
               <div className="mb-4">
                 <span className="eyebrow text-champagne font-bold text-[0.65rem] tracking-[0.25em]">
                   LA PROFESIONAL DETRÁS DE YES I'AM

@@ -12,7 +12,7 @@ export function ConsultantFeature() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column — Consultant with Laptop Portrait */}
           <div className="lg:col-span-5">
-            <Reveal variant="clip" className="overflow-hidden aspect-[3/4] rounded-none shadow-lift relative">
+            <Reveal variant="left" className="overflow-hidden aspect-[3/4] rounded-none shadow-lift relative">
               <img
                 src={heroConsultant}
                 alt="Consultora de Imagen Ejecutiva con laptop — YES I'AM"
@@ -25,7 +25,7 @@ export function ConsultantFeature() {
 
           {/* Right Column — Editorial Text */}
           <div className="lg:col-span-7 flex flex-col items-start pl-0 lg:pl-6">
-            <Reveal>
+            <Reveal variant="right" delay={150}>
               <div className="mb-4">
                 <span className="eyebrow text-champagne font-bold text-[0.65rem] tracking-[0.25em]">
                   ESTRATEGIA VIP · GAME PLAN

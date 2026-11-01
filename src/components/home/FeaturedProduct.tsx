@@ -12,7 +12,7 @@ export function FeaturedProduct() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           {/* Left Side — Luxury Handbag Image */}
           <div className="lg:col-span-6">
-            <Reveal variant="clip" className="overflow-hidden aspect-[4/3] rounded-none shadow-lift relative">
+            <Reveal variant="left" className="overflow-hidden aspect-[4/3] rounded-none shadow-lift relative">
               <img
                 src={resolveImage("luxury-handbag")}
                 alt="Bolso de piel luxury y accesorios ejecutivos"
@@ -25,7 +25,7 @@ export function FeaturedProduct() {
 
           {/* Right Side — Editorial Text Block */}
           <div className="lg:col-span-6 flex flex-col items-start">
-            <Reveal>
+            <Reveal variant="right" delay={150}>
               <span className="eyebrow text-champagne font-bold mb-4 block">TRANSFORMACIÓN VIP</span>
               <h2 className="font-display text-[clamp(2.2rem,4.5vw,3.8rem)] font-light leading-[1.02] text-cream">
                 Transformando líderes y marcas con visión inspirada y resultados estratégicos.
