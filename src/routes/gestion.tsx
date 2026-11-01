@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import type { Product, Space, WoodId } from "@/data/catalog";
 import { IMAGE_KEYS, resolveImage } from "@/data/images";
 import { cn } from "@/lib/utils";
+import { SiteHeader } from "@/components/site/SiteHeader";
 import { useCatalog } from "@/store/catalog-store";
 
 export const Route = createFileRoute("/gestion")({
@@ -88,7 +89,9 @@ function GestionPage() {
   };
 
   return (
-    <div className="mx-auto max-w-[1440px] px-4 py-12 sm:px-6 lg:px-10 lg:py-16">
+    <>
+      <SiteHeader />
+      <div className="mx-auto max-w-[1440px] px-4 py-12 sm:px-6 lg:px-10 lg:py-16">
       <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="eyebrow text-parota">Panel local</p>
@@ -267,5 +270,6 @@ function GestionPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

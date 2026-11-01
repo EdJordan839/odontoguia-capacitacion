@@ -148,8 +148,6 @@ function RootComponent() {
               >
                 Saltar al contenido
               </a>
-              <AnnouncementBar />
-              <SiteHeader />
               <main id="contenido" className="flex-1">
                 {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
                 <Outlet />
