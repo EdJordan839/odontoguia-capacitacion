@@ -62,7 +62,7 @@ export interface Catalog {
   featuredProductId: string;
 }
 
-export const CATALOG_VERSION = 2;
+export const CATALOG_VERSION = 3;
 
 export const WOODS: WoodOption[] = [
   {
