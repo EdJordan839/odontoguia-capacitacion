@@ -1,6 +1,7 @@
 {
-  "name": "NOGARA",
-  "description": "NOGARA — CNC · Diseño · Soluciones. Corte láser y router, arquitectura paramétrica, trofeos y reconocimientos.",
+  "name": "YES I'AM",
+  "description": "YES I'AM — Consultoría de Imagen & Marca Personal. Asesoría ejecutiva de imagen pública, oratoria, personal branding y producción fotográfica editorial.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
+

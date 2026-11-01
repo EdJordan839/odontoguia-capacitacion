@@ -3,15 +3,15 @@ import { SEED_CATALOG } from "@/data/catalog";
 import { addLine, cartCount, cartSubtotal, setLineQuantity } from "@/lib/cart";
 import { computePrice } from "@/lib/pricing";
 
-const repisa = SEED_CATALOG.products.find((p) => p.id === "repisas-decorativas-parametricas")!;
+const product = SEED_CATALOG.products[0]!;
 
 describe("precio configurable", () => {
   it("medida estándar conserva el precio base", () => {
-    expect(computePrice(repisa, SEED_CATALOG.woods, "nogal", "std")).toBe(1850);
+    expect(computePrice(product, SEED_CATALOG.woods, "standard", "individual")).toBe(18500);
   });
 
   it("aplica medida adicional", () => {
-    expect(computePrice(repisa, SEED_CATALOG.woods, "nogal", "grande")).toBe(2450);
+    expect(computePrice(product, SEED_CATALOG.woods, "standard", "vip")).toBe(25000);
   });
 });
 

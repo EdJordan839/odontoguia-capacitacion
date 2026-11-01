@@ -22,6 +22,7 @@ import { SearchDialog } from "@/components/site/SearchDialog";
 import { CartDrawer } from "@/components/site/CartDrawer";
 import { QuickViewDialog } from "@/components/product/QuickViewDialog";
 import { WhatsAppFloatingButton } from "@/components/site/WhatsAppFloatingButton";
+import { BookingModal } from "@/components/site/BookingModal";
 import { CatalogProvider } from "@/store/catalog-store";
 import { CartProvider } from "@/store/cart-store";
 import { UIProvider } from "@/store/ui-store";
@@ -89,13 +90,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#282c1e" },
-      { title: "NOGARA — CNC · Diseño · Soluciones" },
+      { name: "theme-color", content: "#111111" },
+      { title: "YES I'AM — Consultoría de Imagen & Marca Personal" },
       {
         name: "description",
-        content: "Corte CNC router y láser, diseño paramétrico, reconocimientos en acrílico y soluciones personalizadas.",
+        content: "Consultoría de imagen ejecutiva, personal branding, estilismo de negocios, oratoria y dirección de arte editorial.",
       },
-      { property: "og:site_name", content: "NOGARA" },
+      { property: "og:site_name", content: "YES I'AM" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -104,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap",
       },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
@@ -159,6 +160,7 @@ function RootComponent() {
             <SearchDialog />
             <CartDrawer />
             <QuickViewDialog />
+            <BookingModal />
             <WhatsAppFloatingButton />
             <Toaster position="bottom-center" />
           </UIProvider>

@@ -1,120 +1,60 @@
-import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
-import { useState } from "react";
 import { Reveal } from "@/components/motion/Reveal";
 import { resolveImage } from "@/data/images";
-import { cn } from "@/lib/utils";
-import { useCatalog } from "@/store/catalog-store";
-
-type Mode = "espacios" | "categorias";
-
-const SPACE_LAYOUT = [
-  "col-span-2 aspect-[16/11] lg:col-span-1 lg:row-span-2 lg:aspect-auto",
-  "aspect-[3/4] lg:aspect-auto",
-  "aspect-[3/4] lg:aspect-auto",
-  "aspect-[3/4] lg:row-span-2 lg:aspect-auto",
-];
+import { useUI } from "@/store/ui-store";
 
 export function SpacesExplorer() {
-  const { catalog } = useCatalog();
-  const [mode, setMode] = useState<Mode>("espacios");
-
-  const items =
-    mode === "espacios"
-      ? catalog.spaces.map((s) => ({
-          id: s.id,
-          slug: s.slug,
-          name: s.name,
-          caption: s.tagline,
-          image: s.image,
-          count: catalog.products.filter((p) => p.spaceIds.includes(s.id)).length,
-        }))
-      : catalog.categories.map((c) => {
-          const items = catalog.products.filter((p) => p.categoryId === c.id);
-          return {
-            id: c.id,
-            slug: c.slug,
-            name: c.name,
-            caption: c.description,
-            image: items[0]?.image ?? "p-repisas",
-            count: items.length,
-          };
-        });
+  const { openBookingModal } = useUI();
 
   return (
-    <section id="espacios" className="mx-auto max-w-[1440px] scroll-mt-24 px-4 py-20 sm:px-6 lg:px-10 lg:py-32">
-      <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
-        <Reveal>
-          <p className="eyebrow text-parota">Soluciones Nogara</p>
-          <h2 className="mt-3 max-w-2xl text-[clamp(2.25rem,5vw,4.25rem)] font-medium leading-[0.98]">
-            Diseño, tecnología y precisión para <em className="text-olive">cada proyecto</em>
-          </h2>
-        </Reveal>
-        <Reveal delay={120}>
-          <div role="tablist" aria-label="Explorar por" className="inline-flex rounded-full border border-border bg-card p-1">
-            {(["espacios", "categorias"] as Mode[]).map((m) => (
-              <button
-                key={m}
-                role="tab"
-                type="button"
-                aria-selected={mode === m}
-                onClick={() => setMode(m)}
-                className={cn(
-                  "min-h-11 rounded-full px-5 text-sm font-semibold capitalize transition-all duration-500",
-                  mode === m ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground",
-                )}
-              >
-                {m === "espacios" ? "Líneas de aplicación" : "Categorías"}
-              </button>
-            ))}
+    <section id="metodologia" className="scroll-mt-24 bg-cream text-obsidian py-20 lg:py-32 border-t border-obsidian/10">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Left Column — Luxury Perfume Image */}
+          <div className="lg:col-span-4">
+            <Reveal variant="clip" className="overflow-hidden aspect-[4/5] rounded-none shadow-soft">
+              <img
+                src={resolveImage("luxury-perfume")}
+                alt="Detalle de elegancia y perfumería luxury"
+                className="size-full object-cover transition-transform duration-1000 hover:scale-105"
+                loading="lazy"
+              />
+            </Reveal>
           </div>
-        </Reveal>
-      </div>
 
-      <div
-        key={mode}
-        className={cn(
-          "grid grid-cols-2 gap-3 sm:gap-4 lg:gap-5",
-          mode === "espacios"
-            ? "lg:grid-flow-dense lg:grid-cols-3 lg:auto-rows-[19rem] xl:auto-rows-[22rem]"
-            : "lg:grid-cols-3",
-        )}
-      >
-        {items.map((item, i) => (
-          <Reveal
-            key={item.id}
-            variant="clip"
-            delay={(i % 3) * 110}
-            className={cn(
-              "group relative overflow-hidden rounded-[1.25rem]",
-              mode === "espacios"
-                ? (SPACE_LAYOUT[i] ?? "aspect-[3/4]")
-                : "aspect-[4/3]",
-            )}
-          >
-            <img
-              src={resolveImage(item.image)}
-              alt=""
-              loading="lazy"
-              className="absolute inset-0 size-full object-cover transition-transform duration-[1600ms] ease-[var(--ease-out-expo)] group-hover:scale-[1.07]"
-            />
-            <div aria-hidden className="pointer-events-none absolute inset-0 bg-hero-fade opacity-90" />
-            <Link
-              to="/coleccion/$slug"
-              params={{ slug: item.slug }}
-              className="absolute inset-0 flex flex-col justify-end p-4 text-ink-foreground sm:p-6"
-            >
-              <span className="mb-auto self-end grid size-10 place-items-center rounded-full bg-cream/90 text-foreground transition-all duration-500 group-hover:rotate-45 group-hover:bg-cream sm:size-12">
-                <ArrowUpRight className="size-4 sm:size-5" />
-              </span>
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.25em] text-ink-foreground/75">
-                {item.count} {item.count === 1 ? "producto" : "productos"}
-              </span>
-              <span className="mt-1 font-display text-2xl leading-none sm:text-3xl lg:text-4xl">{item.name}</span>
-              <span className="mt-1.5 line-clamp-1 text-xs text-ink-foreground/80 sm:text-sm">{item.caption}</span>
-            </Link>
-          </Reveal>
-        ))}
+          {/* Center Column — Editorial Value Proposition Quote */}
+          <div className="lg:col-span-4 flex flex-col items-center text-center px-4 py-6">
+            <Reveal>
+              <span className="eyebrow text-champagne font-bold mb-4 block">FILOSOFÍA DE MARCA</span>
+              <h2 className="font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-light leading-snug text-obsidian">
+                Diseñamos planes de imagen pública y sistemas de posicionamiento que elevan tu estatus y conectan con tu audiencia de alto nivel.
+              </h2>
+              <p className="mt-6 text-xs uppercase tracking-[0.2em] text-obsidian/70 max-w-sm leading-relaxed">
+                Estrategia personalizada de vestir, comunicación no verbal y reputación ejecutiva.
+              </p>
+              <div className="mt-8">
+                <button
+                  type="button"
+                  onClick={() => openBookingModal()}
+                  className="inline-flex items-center justify-center bg-obsidian text-cream px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.25em] transition-all hover:bg-champagne hover:text-obsidian"
+                >
+                  Descubrir Metodología
+                </button>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right Column — Luxury Watch & Suit Image */}
+          <div className="lg:col-span-4">
+            <Reveal variant="clip" delay={120} className="overflow-hidden aspect-[4/5] rounded-none shadow-soft">
+              <img
+                src={resolveImage("luxury-watch")}
+                alt="Reloj de lujo y traje ejecutivo de sartoría"
+                className="size-full object-cover transition-transform duration-1000 hover:scale-105"
+                loading="lazy"
+              />
+            </Reveal>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -1,30 +1,32 @@
 import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
-import nogaraLogo from "@/assets/nogara-logo.png";
+import yesiamLogo from "@/assets/yesiam/logo.jpg";
 
 export function Logo({ className, onClick }: { className?: string; onClick?: () => void }) {
   return (
     <Link
       to="/"
       onClick={onClick}
-      aria-label="NOGARA — CNC · Diseño · Soluciones"
-      className={cn("group inline-flex items-center gap-2.5 leading-none", className)}
+      aria-label="YES I'AM — Consultoría de Imagen y Marca Personal"
+      className={cn("group inline-flex items-center gap-3 leading-none", className)}
     >
-      <img
-        src={nogaraLogo}
-        alt="NOGARA Logotipo"
-        width={40}
-        height={40}
-        className="size-9 sm:size-10 rounded-lg object-cover ring-1 ring-border shadow-xs transition-transform duration-300 group-hover:scale-105"
-      />
-      <span className="flex flex-col items-start leading-none">
-        <span className="font-display text-[1.45rem] font-bold tracking-wider lg:text-[1.65rem] text-foreground">
-          NOGARA
+      <div className="relative size-10 overflow-hidden rounded-md border border-foreground/15 shadow-sm group-hover:scale-105 transition-transform duration-300">
+        <img
+          src={yesiamLogo}
+          alt="YES I'AM Logo"
+          width={40}
+          height={40}
+          className="size-full object-cover"
+        />
+      </div>
+      <div className="flex flex-col items-start leading-none">
+        <span className="font-display text-[1.5rem] font-semibold tracking-wider text-foreground">
+          YES I'AM
         </span>
-        <span className="mt-0.5 text-[0.52rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
-          CNC · Diseño · Soluciones
+        <span className="mt-1 text-[0.52rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground">
+          Imagen & Marca Personal
         </span>
-      </span>
+      </div>
     </Link>
   );
 }

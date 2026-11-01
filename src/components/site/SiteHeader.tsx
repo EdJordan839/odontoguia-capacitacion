@@ -1,27 +1,21 @@
 import { Link } from "@tanstack/react-router";
-import { ChevronDown, Menu, Search, ShoppingBag } from "lucide-react";
+import { Menu, MessageCircle, Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { useCart } from "@/store/cart-store";
-import { useCatalog } from "@/store/catalog-store";
 import { useUI } from "@/store/ui-store";
 import { Logo } from "./Logo";
 
-const navLink =
-  "relative py-2 text-[0.82rem] font-medium tracking-wide text-foreground/80 transition-colors hover:text-foreground after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-foreground after:transition-transform after:duration-500 hover:after:scale-x-100 data-[status=active]:text-foreground data-[status=active]:after:scale-x-100";
+const NAV_LINKS = [
+  { name: "Inicio", href: "/" },
+  { name: "Metodología", href: "/#metodologia" },
+  { name: "Transformación", href: "/#transformacion" },
+  { name: "Servicios", href: "/#servicios" },
+  { name: "Sobre Mí", href: "/#sobre-mi" },
+];
 
 export function SiteHeader() {
-  const { catalog } = useCatalog();
-  const { count, setOpen } = useCart();
-  const { setSearchOpen, setMenuOpen } = useUI();
+  const { setMenuOpen, openBookingModal } = useUI();
   const [scrolled, setScrolled] = useState(false);
-  const [bump, setBump] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -30,88 +24,62 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    if (count === 0) return;
-    setBump(true);
-    const t = window.setTimeout(() => setBump(false), 450);
-    return () => window.clearTimeout(t);
-  }, [count]);
-
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 transition-[background-color,box-shadow,border-color] duration-500",
+        "sticky top-0 z-40 transition-all duration-500",
         scrolled
-          ? "border-b border-border/70 bg-background/85 shadow-soft backdrop-blur-xl supports-[backdrop-filter]:bg-background/75"
-          : "border-b border-transparent bg-background",
+          ? "border-b border-obsidian/10 bg-cream/90 shadow-soft backdrop-blur-xl supports-[backdrop-filter]:bg-cream/80"
+          : "border-b border-transparent bg-cream",
       )}
     >
-      <div className="mx-auto grid h-[var(--header-h)] max-w-[1440px] grid-cols-[1fr_auto_1fr] items-center gap-4 px-3 sm:px-6 lg:grid-cols-[auto_1fr_auto] lg:px-10">
-        {/* Móvil: menú */}
+      <div className="mx-auto flex h-[var(--header-h)] max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10">
+        {/* Mobile menu toggle */}
         <div className="flex items-center lg:hidden">
           <button
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Abrir menú"
-            className="grid size-11 place-items-center rounded-full transition hover:bg-muted"
+            className="grid size-11 place-items-center rounded-full text-obsidian transition hover:bg-obsidian/5"
           >
             <Menu className="size-5" />
           </button>
         </div>
 
-        <Logo className="justify-self-center lg:justify-self-start" />
+        <Logo />
 
-        {/* Escritorio: categorías */}
-        <nav aria-label="Categorías" className="hidden items-center justify-center gap-7 lg:flex xl:gap-9">
-          {catalog.categories.map((c) => (
-            <Link key={c.id} to="/coleccion/$slug" params={{ slug: c.slug }} className={navLink}>
-              {c.name}
-            </Link>
+        {/* Desktop Navigation */}
+        <nav aria-label="Navegación principal" className="hidden items-center gap-8 lg:flex">
+          {NAV_LINKS.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-xs font-semibold uppercase tracking-[0.2em] text-obsidian/75 transition-colors hover:text-obsidian"
+            >
+              {item.name}
+            </a>
           ))}
-          <DropdownMenu modal={false}>
-            <DropdownMenuTrigger className={cn(navLink, "inline-flex items-center gap-1 outline-none")}>
-              Espacios <ChevronDown className="size-3.5" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="center" sideOffset={14} className="w-64 rounded-2xl p-2">
-              {catalog.spaces.map((s) => (
-                <DropdownMenuItem key={s.id} asChild className="rounded-xl px-3 py-2.5">
-                  <Link to="/coleccion/$slug" params={{ slug: s.slug }} className="flex flex-col items-start gap-0">
-                    <span className="font-display text-lg leading-tight">{s.name}</span>
-                    <span className="text-xs text-muted-foreground">{s.tagline}</span>
-                  </Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
         </nav>
 
-        <div className="flex items-center justify-end gap-1">
+        {/* Right CTA Actions */}
+        <div className="flex items-center gap-3">
+          <a
+            href="https://wa.me/526141879067?text=Hola%20YES%20I'AM%2C%20quisiera%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico"
+            target="_blank"
+            rel="noreferrer"
+            className="hidden sm:inline-flex items-center gap-2 rounded-full border border-emerald-700/30 bg-emerald-50 px-4 py-2 text-xs font-bold text-emerald-800 transition hover:bg-emerald-100"
+          >
+            <MessageCircle className="size-3.5 text-emerald-600" />
+            <span>WhatsApp</span>
+          </a>
+
           <button
             type="button"
-            onClick={() => setSearchOpen(true)}
-            aria-label="Buscar productos"
-            className="inline-flex size-11 items-center justify-center gap-2 rounded-full transition hover:bg-muted xl:h-10 xl:w-auto xl:border xl:border-border xl:px-4"
+            onClick={() => openBookingModal()}
+            className="inline-flex items-center gap-2 bg-obsidian text-cream px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-champagne hover:text-obsidian transition-colors shadow-sm"
           >
-            <Search className="size-[1.15rem]" />
-            <span className="hidden text-sm text-muted-foreground xl:inline">Buscar</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => setOpen(true)}
-            aria-label={`Abrir carrito, ${count} artículos`}
-            className="relative grid size-11 place-items-center rounded-full transition hover:bg-muted"
-          >
-            <ShoppingBag className="size-[1.2rem]" />
-            {count > 0 && (
-              <span
-                className={cn(
-                  "absolute right-1 top-1 grid min-w-5 place-items-center rounded-full bg-primary px-1 text-[0.65rem] font-bold leading-5 text-primary-foreground transition-transform duration-300",
-                  bump && "scale-125",
-                )}
-              >
-                {count}
-              </span>
-            )}
+            <Sparkles className="size-3.5 text-champagne hidden sm:inline" />
+            <span>Agendar</span>
           </button>
         </div>
       </div>

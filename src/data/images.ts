@@ -1,37 +1,19 @@
-// Registro de imágenes locales para NOGARA (CNC · Diseño · Soluciones).
-// El catálogo guarda claves en lugar de URLs con hash de compilación,
-// así lo persistido en localStorage sigue funcionando entre versiones.
-import nogaraLogo from "@/assets/nogara-logo.png";
-import pRepisas from "@/assets/p-repisas.jpg";
-import pGrillbox from "@/assets/p-grillbox.jpg";
-import pReconocimientoSencillo from "@/assets/p-reconocimiento-sencillo.jpg";
-import pReconocimientoPremium from "@/assets/p-reconocimiento-premium.jpg";
+// Registro de imágenes para YES I'AM — Consultoría de Imagen & Marca Personal.
+import yesiamLogo from "@/assets/yesiam/logo.jpg";
+import heroConsultant from "@/assets/yesiam/hero-consultant.jpg";
+import consultantPortrait from "@/assets/yesiam/consultant-portrait.jpg";
+import luxuryPerfume from "@/assets/images/luxury_perfume_marble_1793509260643.jpg";
+import luxuryWatch from "@/assets/images/luxury_watch_suit_1793509261543.jpg";
+import luxuryHandbag from "@/assets/images/luxury_leather_accessory_1793509262171.jpg";
 
 export const IMAGE_REGISTRY = {
-  "nogara-logo": nogaraLogo,
-  "hero": pRepisas,
-  "p-repisas": pRepisas,
-  "p-grillbox": pGrillbox,
-  "p-reconocimiento-sencillo": pReconocimientoSencillo,
-  "p-reconocimiento-premium": pReconocimientoPremium,
-  // Compatibilidad con claves previas si existen en localStorage
-  "space-sala": pRepisas,
-  "space-comedor": pGrillbox,
-  "space-recamara": pRepisas,
-  "space-estudio": pReconocimientoSencillo,
-  "space-terraza": pGrillbox,
-  "space-decoracion": pReconocimientoPremium,
-  "featured-nogal": pRepisas,
-  "featured-parota": pGrillbox,
-  "featured-roble": pReconocimientoPremium,
-  "p-silla": pRepisas,
-  "p-mesa-lateral": pGrillbox,
-  "p-consola": pReconocimientoSencillo,
-  "p-banco": pReconocimientoPremium,
-  "p-lampara": pRepisas,
-  "p-jarrones": pReconocimientoSencillo,
-  "p-espejo": pReconocimientoPremium,
-  "p-charola": pGrillbox,
+  "yesiam-logo": yesiamLogo,
+  "hero": heroConsultant,
+  "hero-consultant": heroConsultant,
+  "consultant-portrait": consultantPortrait,
+  "luxury-perfume": luxuryPerfume,
+  "luxury-watch": luxuryWatch,
+  "luxury-handbag": luxuryHandbag,
 } as const;
 
 export type ImageKey = keyof typeof IMAGE_REGISTRY;

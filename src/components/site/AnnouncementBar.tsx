@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
 export const ANNOUNCEMENTS = [
-  "NOGARA · Taller de Maquinado CNC en Chihuahua, Chih.",
-  "Cotizaciones y atención rápida por WhatsApp: +52 614 187 9067",
-  "Corte láser, router CNC, diseño paramétrico y trofeos en acrílico",
-  "Envíos y entregas seguras a toda la República Mexicana",
+  "YES I'AM · Consultoría de Imagen & Marca Personal",
+  "Donde tu presencia se convierte en autoridad y tu marca en legado",
+  "Asesorías presenciales en Chihuahua y virtuales a todo el mundo",
+  "Agenda tu sesión de diagnóstico inicial por WhatsApp: +52 614 187 9067",
 ];
 
 export function AnnouncementBar() {
@@ -24,7 +24,7 @@ export function AnnouncementBar() {
 
   return (
     <div
-      className="relative z-50 h-[var(--announce-h)] bg-ink text-ink-foreground"
+      className="relative z-50 h-[var(--announce-h)] bg-obsidian text-cream border-b border-cream/10"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
@@ -35,7 +35,7 @@ export function AnnouncementBar() {
           type="button"
           onClick={() => go(-1)}
           aria-label="Anuncio anterior"
-          className="grid size-8 shrink-0 place-items-center rounded-full opacity-70 transition hover:bg-ink-foreground/10 hover:opacity-100"
+          className="grid size-8 shrink-0 place-items-center rounded-full opacity-70 transition hover:bg-cream/10 hover:opacity-100"
         >
           <ChevronLeft className="size-4" />
         </button>
@@ -45,7 +45,7 @@ export function AnnouncementBar() {
               key={text}
               aria-hidden={i !== index}
               className={cn(
-                "absolute inset-0 flex items-center justify-center truncate px-2 text-center text-[0.72rem] font-medium tracking-wide transition-all duration-700 sm:text-xs",
+                "absolute inset-0 flex items-center justify-center truncate px-2 text-center text-[0.72rem] font-medium tracking-widest uppercase transition-all duration-700 sm:text-xs",
                 i === index ? "translate-y-0 opacity-100" : i < index ? "-translate-y-full opacity-0" : "translate-y-full opacity-0",
               )}
             >
@@ -57,7 +57,7 @@ export function AnnouncementBar() {
           type="button"
           onClick={() => go(1)}
           aria-label="Siguiente anuncio"
-          className="grid size-8 shrink-0 place-items-center rounded-full opacity-70 transition hover:bg-ink-foreground/10 hover:opacity-100"
+          className="grid size-8 shrink-0 place-items-center rounded-full opacity-70 transition hover:bg-cream/10 hover:opacity-100"
         >
           <ChevronRight className="size-4" />
         </button>

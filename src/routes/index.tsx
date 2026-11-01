@@ -1,23 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { BrandMarquee } from "@/components/home/BrandMarquee";
+import { ConsultantFeature } from "@/components/home/ConsultantFeature";
 import { FeaturedProduct } from "@/components/home/FeaturedProduct";
 import { Hero } from "@/components/home/Hero";
 import { ProductShowcase } from "@/components/home/ProductShowcase";
 import { SpacesExplorer } from "@/components/home/SpacesExplorer";
+import { StatsCounter } from "@/components/home/StatsCounter";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "NOGARA — CNC · Diseño · Soluciones | Corte Láser y Router" },
+      { title: "YES I'AM — Consultoría de Imagen & Marca Personal" },
       {
         name: "description",
         content:
-          "Soluciones en corte router y láser CNC, repisas decorativas paramétricas, reconocimientos de acrílico y cajas parrilleras Grill Box a la medida.",
+          "YES I'AM — Consultoría de Imagen y Marca Personal en Chihuahua y global. Asesoría ejecutiva de imagen pública, estilismo, oratoria y dirección de arte editorial.",
       },
-      { property: "og:title", content: "NOGARA — CNC · Diseño · Soluciones" },
+      { property: "og:title", content: "YES I'AM — Consultoría de Imagen & Marca Personal" },
       {
         property: "og:description",
-        content: "Corte CNC de alta precisión, diseño paramétrico, reconocimientos corporativos y proyectos a tu medida.",
+        content: "Donde tu presencia se convierte en autoridad y tu marca en legado. Asesorías VIP presenciales y digitales.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -31,9 +33,11 @@ function Index() {
     <>
       <Hero />
       <SpacesExplorer />
-      <FeaturedProduct />
       <BrandMarquee />
+      <FeaturedProduct />
       <ProductShowcase />
+      <StatsCounter />
+      <ConsultantFeature />
     </>
   );
 }

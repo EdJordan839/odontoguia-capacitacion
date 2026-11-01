@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 
 export function WhatsAppFloatingButton() {
   const whatsappUrl =
-    "https://wa.me/526141879067?text=Hola%20Nogara%2C%20me%20gustar%C3%ADa%20cotizar%20un%20proyecto";
+    "https://wa.me/526141879067?text=Hola%20YES%20I'AM%2C%20quisiera%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico";
 
   return (
     <aside
@@ -24,7 +24,7 @@ export function WhatsAppFloatingButton() {
           <MessageCircle className="size-5 fill-current" />
         </div>
         <span className="text-xs font-bold tracking-wide hidden sm:inline-block">
-          Cotizar por WhatsApp
+          Agendar por WhatsApp
         </span>
       </a>
     </aside>
