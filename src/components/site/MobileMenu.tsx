@@ -1,4 +1,4 @@
-import { MessageCircle, Sparkles, X } from "lucide-react";
+import { MessageCircle, X } from "lucide-react";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
 import { useCatalog } from "@/store/catalog-store";
 import { useUI } from "@/store/ui-store";
@@ -9,7 +9,8 @@ const NAV_ITEMS = [
   { name: "Metodología", href: "/#metodologia" },
   { name: "Transformación", href: "/#transformacion" },
   { name: "Servicios VIP", href: "/#servicios" },
-  { name: "Sobre Mí", href: "/#sobre-mi" },
+  { name: "Sobre Mí", href: "/#biografia" },
+  { name: "Misión & Visión", href: "/#mision-vision" },
 ];
 
 export function MobileMenu() {
@@ -47,7 +48,7 @@ export function MobileMenu() {
             ))}
           </nav>
 
-          <p className="eyebrow mb-3 text-obsidian/60 text-[0.65rem]">Programas de Imagen</p>
+          <p className="eyebrow mb-3 text-obsidian/60 text-[0.65rem]">Servicios de Imagen</p>
           <div className="space-y-3 mb-6">
             {catalog.products.map((p) => (
               <button
@@ -75,7 +76,6 @@ export function MobileMenu() {
             }}
             className="w-full flex min-h-12 items-center justify-center gap-2 bg-obsidian text-cream text-xs font-semibold uppercase tracking-[0.2em] transition-colors"
           >
-            <Sparkles className="size-3.5 text-champagne" />
             Agendar Diagnóstico VIP
           </button>
           <a

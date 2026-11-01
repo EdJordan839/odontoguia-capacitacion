@@ -1,6 +1,5 @@
-import { Award, CheckCircle2, Sparkles, UserCheck } from "lucide-react";
+import { Award, UserCheck } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import heroConsultant from "@/assets/yesiam/hero-consultant.jpg";
 import consultantPortrait from "@/assets/yesiam/consultant-portrait.jpg";
 import { useUI } from "@/store/ui-store";
 
@@ -11,34 +10,23 @@ export function Biography() {
     <section id="biografia" className="scroll-mt-24 bg-obsidian text-cream py-20 lg:py-32">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Dual Photo Composition */}
-          <div className="lg:col-span-5 relative">
-            <Reveal variant="clip" className="overflow-hidden aspect-[3/4] shadow-lift relative z-10">
+          {/* Clean Single Editorial Portrait Frame */}
+          <div className="lg:col-span-5">
+            <Reveal variant="clip" className="overflow-hidden aspect-[3/4] shadow-lift border border-cream/15">
               <img
                 src={consultantPortrait}
                 alt="Consultora de Imagen y Marca Personal — YES I'AM"
-                className="size-full object-cover object-top"
+                className="size-full object-cover object-top hover:scale-105 transition-transform duration-1000"
                 loading="lazy"
               />
             </Reveal>
-
-            {/* Overlapping Secondary Portrait */}
-            <div className="hidden sm:block absolute -bottom-8 -right-6 w-2/3 aspect-[4/5] z-20 overflow-hidden border-4 border-obsidian shadow-2xl">
-              <img
-                src={heroConsultant}
-                alt="Consultora ejecutiva en estudio"
-                className="size-full object-cover object-top"
-                loading="lazy"
-              />
-            </div>
           </div>
 
-          {/* Biography & Story Details */}
+          {/* Biography & Details */}
           <div className="lg:col-span-7 flex flex-col items-start pl-0 lg:pl-8">
             <Reveal>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <Sparkles className="size-3.5 text-champagne" />
-                <span className="eyebrow text-champagne font-bold text-[0.65rem]">
+              <div className="mb-4">
+                <span className="eyebrow text-champagne font-bold text-[0.65rem] tracking-[0.25em]">
                   LA PROFESIONAL DETRÁS DE YES I'AM
                 </span>
               </div>
@@ -60,7 +48,7 @@ export function Biography() {
                 <div className="flex items-start gap-3">
                   <UserCheck className="size-5 text-champagne shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-display text-lg text-cream font-medium">Asesoría Personalizada 1 a 1</h4>
+                    <h3 className="font-display text-lg text-cream font-medium">Asesoría Personalizada 1 a 1</h3>
                     <p className="text-xs text-cream/60 mt-0.5">Trato confidencial y diseño a la medida de tu agenda directiva.</p>
                   </div>
                 </div>
@@ -68,7 +56,7 @@ export function Biography() {
                 <div className="flex items-start gap-3">
                   <Award className="size-5 text-champagne shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-display text-lg text-cream font-medium">Enfoque en Resultados</h4>
+                    <h3 className="font-display text-lg text-cream font-medium">Enfoque en Resultados</h3>
                     <p className="text-xs text-cream/60 mt-0.5">Elevación comprobada de estatus, reputación y autoridad.</p>
                   </div>
                 </div>

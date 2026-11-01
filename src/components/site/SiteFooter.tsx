@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, MessageCircle, Phone, ShieldCheck, Sparkles, UserCheck, Video } from "lucide-react";
+import { Award, Clock, Mail, MapPin, MessageCircle, Phone, ShieldCheck, UserCheck, Video } from "lucide-react";
 import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { Reveal } from "@/components/motion/Reveal";
@@ -7,9 +7,9 @@ import { useUI } from "@/store/ui-store";
 
 const GUARANTEES = [
   { icon: ShieldCheck, title: "Confidencialidad Absoluta", text: "Acuerdos de confidencialidad y trato VIP." },
-  { icon: UserCheck, title: "Mentoría 1 a 1 Personalizada", text: "Acompañamiento directo sin plantillas genéricas." },
+  { icon: UserCheck, title: "Asesoría 1 a 1 Personalizada", text: "Acompañamiento directo sin plantillas genéricas." },
   { icon: Video, title: "Sesiones Presenciales & Online", text: "Atención en Chihuahua y vía HD global." },
-  { icon: Sparkles, title: "Resultados de Estatus", text: "Posicionamiento visual y comunicación de alto nivel." },
+  { icon: Award, title: "Resultados de Estatus", text: "Posicionamiento visual y comunicación de alto nivel." },
 ];
 
 export function SiteFooter() {
@@ -102,12 +102,12 @@ export function SiteFooter() {
         </nav>
 
         <div className="lg:col-span-2">
-          <p className="eyebrow mb-4 text-cream/60">Programas VIP</p>
+          <p className="eyebrow mb-4 text-cream/60">Servicios VIP</p>
           <ul className="space-y-3 text-xs text-cream/80">
-            <li className="hover:text-champagne transition-colors">Mentoría Executive 360°</li>
-            <li className="hover:text-champagne transition-colors">Imagen & Fondo de Armario</li>
-            <li className="hover:text-champagne transition-colors">Mastery en Oratoria</li>
-            <li className="hover:text-champagne transition-colors">Producción Fotográfica Editorial</li>
+            <li className="hover:text-champagne transition-colors">Imagen Ejecutiva</li>
+            <li className="hover:text-champagne transition-colors">Imagen Personal</li>
+            <li className="hover:text-champagne transition-colors">Imagen Pública</li>
+            <li className="hover:text-champagne transition-colors">Imagen para Empresas</li>
           </ul>
         </div>
 

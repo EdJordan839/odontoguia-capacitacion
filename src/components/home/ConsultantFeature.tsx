@@ -1,4 +1,4 @@
-import { ArrowRight, Award, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, Award, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import consultantPortrait from "@/assets/yesiam/consultant-portrait.jpg";
 import { useUI } from "@/store/ui-store";
@@ -7,7 +7,7 @@ export function ConsultantFeature() {
   const { openBookingModal } = useUI();
 
   return (
-    <section id="sobre-mi" className="scroll-mt-24 bg-obsidian text-cream py-20 lg:py-32">
+    <section id="diagnostico-360" className="scroll-mt-24 bg-obsidian text-cream py-20 lg:py-32 border-t border-cream/10">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column — Consultant Seated Portrait */}
@@ -26,9 +26,8 @@ export function ConsultantFeature() {
           {/* Right Column — Editorial Text */}
           <div className="lg:col-span-7 flex flex-col items-start pl-0 lg:pl-6">
             <Reveal>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <Sparkles className="size-3.5 text-champagne" />
-                <span className="eyebrow text-champagne font-bold text-[0.65rem]">
+              <div className="mb-4">
+                <span className="eyebrow text-champagne font-bold text-[0.65rem] tracking-[0.25em]">
                   ESTRATEGIA VIP · GAME PLAN
                 </span>
               </div>
@@ -45,7 +44,7 @@ export function ConsultantFeature() {
                 <div className="flex items-start gap-3">
                   <Award className="size-5 text-champagne shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-display text-lg text-cream font-medium">Auditoría Morfológica & Color</h4>
+                    <h3 className="font-display text-lg text-cream font-medium">Auditoría Morfológica & Color</h3>
                     <p className="text-xs text-cream/60 mt-1 leading-normal">
                       Selección exacta de tonalidades y prendas para destacar tu fisonomía.
                     </p>
@@ -55,7 +54,7 @@ export function ConsultantFeature() {
                 <div className="flex items-start gap-3">
                   <ShieldCheck className="size-5 text-champagne shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-display text-lg text-cream font-medium">Protocolo & Lenguaje Corporal</h4>
+                    <h3 className="font-display text-lg text-cream font-medium">Protocolo & Lenguaje Corporal</h3>
                     <p className="text-xs text-cream/60 mt-1 leading-normal">
                       Dominio de la escena, postura y proyección en juntas directivas y medios.
                     </p>

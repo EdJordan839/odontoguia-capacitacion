@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { MessageCircle, X, Calendar, User, Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { MessageCircle, X, Calendar, User, Mail, Phone, MapPin, Check } from "lucide-react";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useCatalog } from "@/store/catalog-store";
@@ -182,7 +182,7 @@ export function BookingModal() {
               type="submit"
               className="flex-1 flex items-center justify-center gap-2 rounded-full bg-obsidian text-cream py-3.5 px-6 text-sm font-semibold hover:bg-obsidian/90 transition-all shadow-md"
             >
-              <Sparkles className="size-4 text-champagne" />
+              <Check className="size-4 text-champagne" />
               Confirmar & Agendar
             </button>
             <a

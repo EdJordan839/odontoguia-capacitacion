@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Compass, Eye, ShieldCheck, Sparkles, Star, Award, HeartHandshake } from "lucide-react";
+import { Compass, Eye, ShieldCheck, Star, Award, HeartHandshake } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { cn } from "@/lib/utils";
 
@@ -26,9 +26,8 @@ export function MissionVisionValues() {
       <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <Reveal>
-            <div className="inline-flex items-center justify-center gap-2 mb-3">
-              <Sparkles className="size-3.5 text-champagne" />
-              <span className="eyebrow text-champagne font-bold text-[0.65rem]">
+            <div className="mb-3">
+              <span className="eyebrow text-champagne font-bold text-[0.65rem] tracking-[0.25em]">
                 PROPÓSITO & FILOSOFÍA
               </span>
             </div>

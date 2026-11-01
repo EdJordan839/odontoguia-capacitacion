@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, MessageCircle, Sparkles } from "lucide-react";
+import { Menu, MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useUI } from "@/store/ui-store";
@@ -76,9 +76,8 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => openBookingModal()}
-            className="inline-flex items-center gap-2 bg-obsidian text-cream px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-champagne hover:text-obsidian transition-colors shadow-sm"
+            className="inline-flex items-center gap-2 bg-obsidian text-cream px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-champagne hover:text-obsidian transition-colors shadow-sm"
           >
-            <Sparkles className="size-3.5 text-champagne hidden sm:inline" />
             <span>Agendar</span>
           </button>
         </div>
