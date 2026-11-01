@@ -17,9 +17,9 @@ describe("precio configurable", () => {
 
 describe("carrito", () => {
   it("agrupa la misma configuración y separa configuraciones distintas", () => {
-    let lines = addLine([], { productId: "x", woodId: "nogal", unitPrice: 100 });
-    lines = addLine(lines, { productId: "x", woodId: "nogal", unitPrice: 100 });
-    lines = addLine(lines, { productId: "x", woodId: "roble", unitPrice: 90 });
+    let lines = addLine([], { productId: "x", woodId: "standard", unitPrice: 100 });
+    lines = addLine(lines, { productId: "x", woodId: "standard", unitPrice: 100 });
+    lines = addLine(lines, { productId: "x", woodId: "premium", unitPrice: 90 });
     expect(lines).toHaveLength(2);
     expect(cartCount(lines)).toBe(3);
     expect(cartSubtotal(lines)).toBe(290);
