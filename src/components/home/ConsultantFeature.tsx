@@ -1,6 +1,6 @@
 import { ArrowRight, Award, ShieldCheck } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
-import consultantPortrait from "@/assets/yesiam/consultant-portrait.jpg";
+import heroConsultant from "@/assets/yesiam/hero-consultant.jpg";
 import { useUI } from "@/store/ui-store";
 
 export function ConsultantFeature() {
@@ -10,12 +10,12 @@ export function ConsultantFeature() {
     <section id="diagnostico-360" className="scroll-mt-24 bg-obsidian text-cream py-20 lg:py-32 border-t border-cream/10">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column — Consultant Seated Portrait */}
+          {/* Left Column — Consultant with Laptop Portrait */}
           <div className="lg:col-span-5">
             <Reveal variant="clip" className="overflow-hidden aspect-[3/4] rounded-none shadow-lift relative">
               <img
-                src={consultantPortrait}
-                alt="Consultora de Imagen Ejecutiva — YES I'AM"
+                src={heroConsultant}
+                alt="Consultora de Imagen Ejecutiva con laptop — YES I'AM"
                 className="size-full object-cover object-top transition-transform duration-1000 hover:scale-105"
                 loading="lazy"
               />
