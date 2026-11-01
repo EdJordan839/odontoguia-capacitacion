@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { MessageCircle, X, Calendar, User, Mail, Phone, MapPin, Check } from "lucide-react";
+import { MessageCircle, Calendar, User, Mail, Phone, MapPin, Check } from "lucide-react";
 import { toast } from "sonner";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { useCatalog } from "@/store/catalog-store";
@@ -47,28 +47,28 @@ export function BookingModal() {
 
   return (
     <Dialog open={bookingOpen} onOpenChange={setBookingOpen}>
-      <DialogContent className="max-w-lg rounded-2xl bg-cream border-obsidian/10 p-6 text-obsidian sm:p-8">
+      <DialogContent className="max-w-lg bg-[#F4F1EA] border border-[#DDD8CF] p-6 text-[#1A1A1A] sm:p-8 rounded-none">
         <DialogHeader className="text-left">
-          <div className="flex items-center justify-between">
-            <span className="eyebrow text-champagne font-bold">YES I'AM · Diagnóstico VIP</span>
-          </div>
-          <DialogTitle className="font-display text-3xl font-semibold text-obsidian mt-1">
-            Reserva tu Consultoría
+          <span className="text-[0.62rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D]">
+            YES I'AM · ATELIER PRIVADO
+          </span>
+          <DialogTitle className="font-display text-2xl sm:text-3xl font-light text-[#1A1A1A] uppercase tracking-wide mt-1">
+            Reserva tu Consulta
           </DialogTitle>
-          <DialogDescription className="text-xs text-obsidian/70">
-            Diseñamos una experiencia de marca personalizada para proyectar tu máxima autoridad.
+          <DialogDescription className="text-xs text-[#5A554D] font-light">
+            Estrategia de imagen y presencia ejecutiva diseñada con rigor técnico a tu medida.
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="mt-4 space-y-4">
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-obsidian/80 mb-1">
+            <label className="block text-[0.68rem] font-semibold uppercase tracking-wider text-[#5A554D] mb-1">
               Programa / Servicio
             </label>
             <select
               value={serviceId}
               onChange={(e) => setServiceId(e.target.value)}
-              className="w-full rounded-xl border border-obsidian/20 bg-background px-4 py-3 text-sm font-medium focus:border-obsidian focus:outline-none"
+              className="w-full border border-[#DDD8CF] bg-[#EFECE6] px-3.5 py-2.5 text-xs font-medium focus:border-[#1A1A1A] focus:outline-none"
             >
               {catalog.products.map((p) => (
                 <option key={p.id} value={p.id}>
@@ -80,35 +80,35 @@ export function BookingModal() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-obsidian/80 mb-1">
+              <label className="block text-[0.68rem] font-semibold uppercase tracking-wider text-[#5A554D] mb-1">
                 Nombre Completo *
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-3.5 size-4 text-obsidian/40" />
+                <User className="absolute left-3 top-3 size-3.5 text-[#7A756D]" />
                 <input
                   type="text"
                   required
                   placeholder="Tu nombre"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full rounded-xl border border-obsidian/20 bg-background pl-9 pr-3 py-2.5 text-sm focus:border-obsidian focus:outline-none"
+                  className="w-full border border-[#DDD8CF] bg-[#EFECE6] pl-8 pr-3 py-2 text-xs focus:border-[#1A1A1A] focus:outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-obsidian/80 mb-1">
+              <label className="block text-[0.68rem] font-semibold uppercase tracking-wider text-[#5A554D] mb-1">
                 Teléfono / WhatsApp *
               </label>
               <div className="relative">
-                <Phone className="absolute left-3 top-3.5 size-4 text-obsidian/40" />
+                <Phone className="absolute left-3 top-3 size-3.5 text-[#7A756D]" />
                 <input
                   type="tel"
                   required
                   placeholder="+52 614 000 0000"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full rounded-xl border border-obsidian/20 bg-background pl-9 pr-3 py-2.5 text-sm focus:border-obsidian focus:outline-none"
+                  className="w-full border border-[#DDD8CF] bg-[#EFECE6] pl-8 pr-3 py-2 text-xs focus:border-[#1A1A1A] focus:outline-none"
                 />
               </div>
             </div>
@@ -116,82 +116,82 @@ export function BookingModal() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-obsidian/80 mb-1">
+              <label className="block text-[0.68rem] font-semibold uppercase tracking-wider text-[#5A554D] mb-1">
                 Correo Electrónico
               </label>
               <div className="relative">
-                <Mail className="absolute left-3 top-3.5 size-4 text-obsidian/40" />
+                <Mail className="absolute left-3 top-3 size-3.5 text-[#7A756D]" />
                 <input
                   type="email"
                   placeholder="correo@ejemplo.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full rounded-xl border border-obsidian/20 bg-background pl-9 pr-3 py-2.5 text-sm focus:border-obsidian focus:outline-none"
+                  className="w-full border border-[#DDD8CF] bg-[#EFECE6] pl-8 pr-3 py-2 text-xs focus:border-[#1A1A1A] focus:outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wider text-obsidian/80 mb-1">
+              <label className="block text-[0.68rem] font-semibold uppercase tracking-wider text-[#5A554D] mb-1">
                 Ciudad / Modalidad
               </label>
               <div className="relative">
-                <MapPin className="absolute left-3 top-3.5 size-4 text-obsidian/40" />
+                <MapPin className="absolute left-3 top-3 size-3.5 text-[#7A756D]" />
                 <input
                   type="text"
                   placeholder="Chihuahua / En línea"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
-                  className="w-full rounded-xl border border-obsidian/20 bg-background pl-9 pr-3 py-2.5 text-sm focus:border-obsidian focus:outline-none"
+                  className="w-full border border-[#DDD8CF] bg-[#EFECE6] pl-8 pr-3 py-2 text-xs focus:border-[#1A1A1A] focus:outline-none"
                 />
               </div>
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-obsidian/80 mb-1">
+            <label className="block text-[0.68rem] font-semibold uppercase tracking-wider text-[#5A554D] mb-1">
               Fecha Tentativa
             </label>
             <div className="relative">
-              <Calendar className="absolute left-3 top-3.5 size-4 text-obsidian/40" />
+              <Calendar className="absolute left-3 top-3 size-3.5 text-[#7A756D]" />
               <input
                 type="text"
                 placeholder="Ej. Próxima semana, Martes por la tarde..."
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
-                className="w-full rounded-xl border border-obsidian/20 bg-background pl-9 pr-3 py-2.5 text-sm focus:border-obsidian focus:outline-none"
+                className="w-full border border-[#DDD8CF] bg-[#EFECE6] pl-8 pr-3 py-2 text-xs focus:border-[#1A1A1A] focus:outline-none"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wider text-obsidian/80 mb-1">
+            <label className="block text-[0.68rem] font-semibold uppercase tracking-wider text-[#5A554D] mb-1">
               Objetivo de Imagen o Mensaje
             </label>
             <textarea
               rows={2}
-              placeholder="Cuéntanos brevemente qué deseas lograr con tu marca personal..."
+              placeholder="Cuéntanos brevemente qué deseas proyectar o solucionar..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
-              className="w-full rounded-xl border border-obsidian/20 bg-background p-3 text-sm focus:border-obsidian focus:outline-none resize-none"
+              className="w-full border border-[#DDD8CF] bg-[#EFECE6] p-2.5 text-xs focus:border-[#1A1A1A] focus:outline-none resize-none"
             />
           </div>
 
           <div className="pt-2 flex flex-col sm:flex-row gap-3">
             <button
               type="submit"
-              className="flex-1 flex items-center justify-center gap-2 rounded-full bg-obsidian text-cream py-3.5 px-6 text-sm font-semibold hover:bg-obsidian/90 transition-all shadow-md"
+              className="flex-1 flex items-center justify-center gap-2 bg-[#1A1A1A] text-[#F4F1EA] py-3 px-5 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors"
             >
-              <Check className="size-4 text-champagne" />
+              <Check className="size-3.5" />
               Confirmar & Agendar
             </button>
             <a
-              href={`https://wa.me/526141879067?text=Hola%20YES%20I'AM%2C%20quisiera%20agendar%20una%20sesi%C3%B3n%20directa%20de%20diagn%C3%B3stico`}
+              href="https://wa.me/526141879067?text=Hola%20YES%20I'AM%2C%20quisiera%20agendar%20una%20sesi%C3%B3n%20directa"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 rounded-full bg-emerald-700 text-white py-3.5 px-5 text-sm font-semibold hover:bg-emerald-600 transition-all"
+              className="flex items-center justify-center gap-2 border border-[#1A1A1A] text-[#1A1A1A] py-3 px-4 text-xs font-semibold uppercase tracking-[0.18em] hover:bg-[#1A1A1A] hover:text-[#F4F1EA] transition-colors"
             >
-              <MessageCircle className="size-4" />
+              <MessageCircle className="size-3.5" />
               WhatsApp Directo
             </a>
           </div>
