@@ -1,4 +1,4 @@
-import { ArrowRight, Crown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroConsultant from "@/assets/yesiam/hero-consultant.jpg";
 import { useUI } from "@/store/ui-store";
 
@@ -21,13 +21,6 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-20 lg:py-32 w-full">
         <div className="max-w-2xl">
-          <div className="animate-fade-soft mb-6 inline-flex items-center gap-2 rounded-full border border-cream/20 bg-cream/5 px-4 py-1.5 backdrop-blur-md">
-            <Crown className="size-3.5 text-champagne" />
-            <span className="eyebrow text-cream/90 text-[0.65rem]">
-              ESTRATEGIA & POSICIONAMIENTO VIP
-            </span>
-          </div>
-
           <h1 className="font-display text-[clamp(2.8rem,7.5vw,6rem)] font-light leading-[0.95] tracking-tight text-cream">
             Consultoría de <br />
             <em className="font-normal italic text-champagne">Imagen</em> & Marca Personal
