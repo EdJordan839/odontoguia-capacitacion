@@ -9,12 +9,12 @@ export function SpacesExplorer() {
     <section id="metodologia" className="scroll-mt-24 bg-cream text-obsidian py-20 lg:py-32 border-t border-obsidian/10">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          {/* Left Column — Luxury Perfume Image */}
+          {/* Left Column — Executive Styling Moodboard Image */}
           <div className="lg:col-span-4">
             <Reveal variant="clip" className="overflow-hidden aspect-[4/5] rounded-none shadow-soft">
               <img
-                src={resolveImage("luxury-perfume")}
-                alt="Detalle de elegancia y perfumería luxury"
+                src={resolveImage("executive-styling")}
+                alt="Planificación editorial de vestuario ejecutivo y paleta de colores"
                 className="size-full object-cover transition-transform duration-1000 hover:scale-105"
                 loading="lazy"
               />
@@ -26,10 +26,10 @@ export function SpacesExplorer() {
             <Reveal>
               <span className="eyebrow text-champagne font-bold mb-4 block">FILOSOFÍA DE MARCA</span>
               <h2 className="font-display text-[clamp(1.75rem,3.2vw,2.75rem)] font-light leading-snug text-obsidian">
-                Diseñamos planes de imagen pública y sistemas de posicionamiento que elevan tu estatus y conectan con tu audiencia de alto nivel.
+                Diseñamos planes de imagen pública e identidad estratégica que elevan tu estatus y conectan con tu audiencia de alto nivel.
               </h2>
               <p className="mt-6 text-xs uppercase tracking-[0.2em] text-obsidian/70 max-w-sm leading-relaxed">
-                Estrategia personalizada de vestir, comunicación no verbal y reputación ejecutiva.
+                Asesorías especializadas en Imagen Ejecutiva, Personal, Pública y para Empresas.
               </p>
               <div className="mt-8">
                 <button

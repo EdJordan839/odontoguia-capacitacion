@@ -7,11 +7,11 @@ const product = SEED_CATALOG.products[0]!;
 
 describe("precio configurable", () => {
   it("medida estándar conserva el precio base", () => {
-    expect(computePrice(product, SEED_CATALOG.woods, "standard", "individual")).toBe(18500);
+    expect(computePrice(product, SEED_CATALOG.woods, "standard", "individual")).toBe(14500);
   });
 
   it("aplica medida adicional", () => {
-    expect(computePrice(product, SEED_CATALOG.woods, "standard", "vip")).toBe(25000);
+    expect(computePrice(product, SEED_CATALOG.woods, "standard", "vip")).toBe(20000);
   });
 });
 

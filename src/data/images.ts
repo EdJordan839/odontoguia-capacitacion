@@ -2,7 +2,7 @@
 import yesiamLogo from "@/assets/yesiam/logo.jpg";
 import heroConsultant from "@/assets/yesiam/hero-consultant.jpg";
 import consultantPortrait from "@/assets/yesiam/consultant-portrait.jpg";
-import luxuryPerfume from "@/assets/images/luxury_perfume_marble_1793509260643.jpg";
+import executiveStylingBoard from "@/assets/images/executive_styling_board_1793510578294.jpg";
 import luxuryWatch from "@/assets/images/luxury_watch_suit_1793509261543.jpg";
 import luxuryHandbag from "@/assets/images/luxury_leather_accessory_1793509262171.jpg";
 
@@ -11,7 +11,8 @@ export const IMAGE_REGISTRY = {
   "hero": heroConsultant,
   "hero-consultant": heroConsultant,
   "consultant-portrait": consultantPortrait,
-  "luxury-perfume": luxuryPerfume,
+  "executive-styling": executiveStylingBoard,
+  "luxury-perfume": executiveStylingBoard,
   "luxury-watch": luxuryWatch,
   "luxury-handbag": luxuryHandbag,
 } as const;

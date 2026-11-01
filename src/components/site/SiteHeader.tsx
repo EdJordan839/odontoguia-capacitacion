@@ -8,9 +8,9 @@ import { Logo } from "./Logo";
 const NAV_LINKS = [
   { name: "Inicio", href: "/" },
   { name: "Metodología", href: "/#metodologia" },
-  { name: "Transformación", href: "/#transformacion" },
   { name: "Servicios", href: "/#servicios" },
-  { name: "Sobre Mí", href: "/#sobre-mi" },
+  { name: "Sobre Mí", href: "/#biografia" },
+  { name: "Misión & Visión", href: "/#mision-vision" },
 ];
 
 export function SiteHeader() {
