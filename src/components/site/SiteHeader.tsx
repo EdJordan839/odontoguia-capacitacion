@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, MessageCircle } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useUI } from "@/store/ui-store";
@@ -63,16 +63,6 @@ export function SiteHeader() {
 
         {/* Right CTA Actions */}
         <div className="flex items-center gap-3">
-          <a
-            href="https://wa.me/526141879067?text=Hola%20YES%20I'AM%2C%20quisiera%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico"
-            target="_blank"
-            rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 rounded-full border border-emerald-700/30 bg-emerald-50 px-4 py-2 text-xs font-bold text-emerald-800 transition hover:bg-emerald-100"
-          >
-            <MessageCircle className="size-3.5 text-emerald-600" />
-            <span>WhatsApp</span>
-          </a>
-
           <button
             type="button"
             onClick={() => openBookingModal()}
