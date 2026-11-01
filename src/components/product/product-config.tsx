@@ -54,9 +54,9 @@ export function useProductConfig(product: Product | undefined) {
 }
 
 export const WOOD_SWATCH: Record<WoodId, string> = {
-  nogal: "bg-walnut",
-  parota: "bg-parota",
-  roble: "bg-oak",
+  standard: "bg-oak",
+  premium: "bg-parota",
+  executive: "bg-walnut",
 };
 
 export function WoodSelector({

@@ -67,7 +67,7 @@ function GestionPage() {
       spaceIds: [],
       price: 1000,
       image: "p-repisas",
-      woods: ["nogal"],
+      woods: ["standard"],
       description: "Descripción de la pieza.",
       leadTime: "Fabricación en 3-5 días",
     };
