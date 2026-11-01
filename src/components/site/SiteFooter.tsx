@@ -1,5 +1,6 @@
 import { Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { useUI } from "@/store/ui-store";
+import yesiamBrandLogo from "@/assets/yesiam/yesiam-brand-logo.jpeg";
 
 export function SiteFooter() {
   const { openBookingModal } = useUI();
@@ -10,10 +11,12 @@ export function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
           {/* Column 1: Brand & Atelier */}
           <div className="md:col-span-5">
-            <h2 className="font-display text-3xl font-light tracking-wider uppercase text-[#F4F1EA]">
-              YES I'AM
-            </h2>
-            <p className="mt-1 text-[0.62rem] font-semibold uppercase tracking-[0.35em] text-[#A8A298]">
+            <img
+              src={yesiamBrandLogo}
+              alt="YES I'AM"
+              className="h-10 w-auto object-contain mb-4"
+            />
+            <p className="text-[0.62rem] font-semibold uppercase tracking-[0.35em] text-[#A8A298]">
               Consultoría de Imagen & Marca Personal
             </p>
             <p className="mt-6 text-sm leading-relaxed text-[#A8A298] font-light max-w-sm">

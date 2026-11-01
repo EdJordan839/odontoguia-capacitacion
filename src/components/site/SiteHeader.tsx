@@ -2,6 +2,7 @@ import { Menu } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { useUI } from "@/store/ui-store";
+import yesiamBrandLogo from "@/assets/yesiam/yesiam-brand-logo.jpeg";
 
 const NAV_LINKS = [
   { name: "YOU WILL GET", href: "#you-will-get" },
@@ -44,15 +45,16 @@ export function SiteHeader() {
           </button>
         </div>
 
-        {/* Logo matching exact font and look from screenshot */}
-        <a
-          href="/"
-          className="font-serif italic text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight leading-none"
-        >
-          Logo
+        {/* YES I'AM Official Logo */}
+        <a href="/" aria-label="YES I'AM — Inicio" className="flex items-center">
+          <img
+            src={yesiamBrandLogo}
+            alt="YES I'AM"
+            className="h-8 sm:h-9 w-auto object-contain invert mix-blend-multiply"
+          />
         </a>
 
-        {/* Desktop Navigation Links matching exact items in screenshot */}
+        {/* Desktop Navigation Links */}
         <nav aria-label="Navegación principal" className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {NAV_LINKS.map((item) => (
             <a
