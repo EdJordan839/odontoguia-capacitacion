@@ -3,61 +3,61 @@ import { Reveal } from "@/components/motion/Reveal";
 
 export function ShowitIdealClient() {
   return (
-    <section id="cliente-ideal" className="scroll-mt-20 bg-[#F4F1EA] text-[#1A1A1A] py-20 lg:py-28 border-b border-[#DDD8CF]">
+    <section id="ideal-client" className="scroll-mt-14 bg-[#F5F2EB] text-[#1A1A1A] py-20 lg:py-28 border-b border-[#DDD8CF]">
       <div className="mx-auto max-w-5xl px-6 sm:px-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-14">
           <Reveal variant="up">
             <span className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#7A756D] mb-3 block">
-              CLARIDAD & ENFOQUE
+              CLARITY & ALIGNMENT
             </span>
-            <h2 className="font-display text-[clamp(2.2rem,4.5vw,3.5rem)] font-light leading-[1] text-[#1A1A1A] uppercase">
-              ¿Este servicio es para ti?
+            <h2 className="font-display text-2xl sm:text-3xl tracking-[0.12em] text-[#1A1A1A] uppercase">
+              IDEAL CLIENT
             </h2>
-            <p className="mt-3 text-sm text-[#5A554D] font-light max-w-md mx-auto">
-              Trabajamos con líderes comprometidos con proyectar la versión más sobria y contundente de su marca personal.
+            <p className="mt-2 font-serif italic text-base text-[#5A554D]">
+              Diseñado exclusivamente para líderes comprometidos con su proyección.
             </p>
           </Reveal>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Card 1: Esto es para ti */}
+          {/* Card 1: This is for you if: */}
           <Reveal variant="left">
-            <div className="bg-[#EFECE6] border border-[#DDD8CF] p-8 sm:p-10 h-full">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#1A1A1A] block mb-6 border-b border-[#DDD8CF] pb-4">
-                Esto es para ti si...
+            <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-10 h-full">
+              <span className="font-serif italic text-base text-[#1A1A1A] block mb-5 border-b border-[#D5D0C5] pb-3">
+                This is for you if...
               </span>
-              <ul className="space-y-4">
+              <ul className="space-y-3.5">
                 {[
-                  "Eres directivo, fundador, vocero o profesional con responsabilidades de alto nivel.",
-                  "Buscas que tu imagen hable con la misma autoridad que tu trayectoria y conocimiento.",
-                  "Valoras la sobriedad, la técnica precisa y la discreción sin modas pasajeras ni exageraciones.",
-                  "Deseas un guardarropa funcional y un manual visual que te ahorre tiempo todos los días.",
+                  "Eres directivo, CEO, socio o vocero con responsabilidades de alta visibilidad.",
+                  "Buscas que tu presencia física comunique la misma autoridad y calibre que tu trayectoria.",
+                  "Valoras el minimalismo sobrio, la técnica morfológica y la elegancia sin modas pasajeras.",
+                  "Deseas un guardarropa estratégico que elimine la fatiga de decisión diaria.",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3.5">
-                    <Check className="size-4 text-[#1A1A1A] shrink-0 mt-1 stroke-[2]" />
-                    <span className="text-sm text-[#4A453D] font-light leading-relaxed">{item}</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <Check className="size-4 text-[#1A1A1A] shrink-0 mt-1 stroke-[1.75]" />
+                    <span className="font-serif text-xs sm:text-sm text-[#3A352D] font-light leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
           </Reveal>
 
-          {/* Card 2: Esto no es para ti */}
-          <Reveal variant="right" delay={100}>
-            <div className="bg-[#EFECE6] border border-[#DDD8CF] p-8 sm:p-10 h-full">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#7A756D] block mb-6 border-b border-[#DDD8CF] pb-4">
-                Esto no es para ti si...
+          {/* Card 2: This is not for you if: */}
+          <Reveal variant="right" delay={80}>
+            <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-10 h-full">
+              <span className="font-serif italic text-base text-[#7A756D] block mb-5 border-b border-[#D5D0C5] pb-3">
+                This is not for you if...
               </span>
-              <ul className="space-y-4">
+              <ul className="space-y-3.5">
                 {[
-                  "Buscas consejos superficiales o tendencias de moda rápida sin sustento estratégico.",
-                  "No estás dispuesto a evaluar con objetividad tu guardarropa y presencia actual.",
-                  "Prefieres fórmulas genéricas en lugar de un diagnóstico individual riguroso.",
-                  "No consideras tu imagen personal y reputación como un activo de negociación profesional.",
+                  "Buscas tendencias efímeras de moda rápida o atuendos llamativos sin criterio directivo.",
+                  "No estás dispuesto a evaluar con apertura tu presencia y código de vestimenta actual.",
+                  "Prefieres fórmulas genéricas masivas en vez de una asesoría técnica 1 a 1.",
+                  "No consideras tu reputación visual como un activo estratégico en los negocios.",
                 ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-3.5">
+                  <li key={i} className="flex items-start gap-3">
                     <Minus className="size-4 text-[#7A756D] shrink-0 mt-1 stroke-[1.5]" />
-                    <span className="text-sm text-[#6B655D] font-light leading-relaxed">{item}</span>
+                    <span className="font-serif text-xs sm:text-sm text-[#6B655D] font-light leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>

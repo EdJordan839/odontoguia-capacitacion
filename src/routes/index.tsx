@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ShowitAbout } from "@/components/home/ShowitAbout";
+import { ShowitFaq } from "@/components/home/ShowitFaq";
 import { ShowitHero } from "@/components/home/ShowitHero";
 import { ShowitIdealClient } from "@/components/home/ShowitIdealClient";
 import { ShowitInsidePackage } from "@/components/home/ShowitInsidePackage";
@@ -40,6 +41,7 @@ function Index() {
       <ShowitIdealClient />
       <ShowitAbout />
       <ShowitInvestment />
+      <ShowitFaq />
     </>
   );
 }

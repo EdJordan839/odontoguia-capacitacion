@@ -2,41 +2,38 @@ import { Check } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 
 const BULLETS = [
-  "Identidad visual y código de vestimenta alineados al nivel de tu liderazgo ejecutivo.",
-  "Un fondo de armario inteligente y curado que elimina la fatiga de decisión diaria.",
-  "Dominio de la comunicación no verbal, postura y proyección escénica ante inversionistas y juntas.",
-  "Coherencia absoluta entre tu visión profesional y la percepción que el mercado tiene de ti.",
-  "Reconocimiento instantáneo de estatus, autoridad y elegancia en cualquier entorno de negocios.",
+  "Identidad visual y código de vestimenta alineados al nivel de tu liderazgo ejecutivo",
+  "Un fondo de armario inteligente y curado que elimina la indecisión matutina",
+  "Dominio de la comunicación no verbal, postura y presencia escénica ante inversionistas y medios",
+  "Coherencia absoluta entre tu visión profesional y la percepción que el mercado tiene de ti",
 ];
 
 export function ShowitPaintPicture() {
   return (
-    <section id="que-incluye" className="scroll-mt-20 bg-[#EFECE6] text-[#1A1A1A] py-20 lg:py-28 border-b border-[#DDD8CF]">
-      <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
+    <section className="bg-[#F5F2EB] text-[#1A1A1A] py-20 lg:py-32 border-b border-[#DDD8CF]">
+      <div className="mx-auto max-w-2xl px-6 sm:px-10 text-center">
         <Reveal variant="up">
-          <span className="font-display italic text-lg sm:text-xl text-[#6B655D] block mb-3">
-            Imagina esto...
+          <span className="text-[0.68rem] font-semibold uppercase tracking-[0.35em] text-[#7A756D] block mb-4">
+            IMAGINE THIS...
           </span>
 
-          <h2 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] font-light leading-[1.08] text-[#1A1A1A] uppercase tracking-wide">
-            Una presencia que impacta antes de pronunciar una sola palabra.
+          <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-light leading-[1.08] tracking-[0.06em] text-[#1A1A1A] uppercase">
+            PAINT A PICTURE.
           </h2>
+          <p className="font-serif italic text-2xl sm:text-3xl text-[#2A251D] font-normal leading-tight mt-1">
+            Grab their attention and make them <br />
+            want to read more
+          </p>
 
-          <div className="mt-12 text-left max-w-xl mx-auto space-y-4">
+          <div className="mt-12 text-left space-y-3.5 max-w-lg mx-auto">
             {BULLETS.map((item, i) => (
-              <div key={i} className="flex items-start gap-4">
+              <div key={i} className="flex items-start gap-3">
                 <Check className="size-4 text-[#1A1A1A] shrink-0 mt-1 stroke-[1.75]" />
-                <p className="text-sm leading-relaxed text-[#4A453D] font-light">
+                <p className="font-serif text-sm sm:text-base text-[#3A352D] font-light leading-relaxed">
                   {item}
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-12 pt-6">
-            <span className="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] block">
-              METODOLOGÍA SOBRIA · RESULTADOS COMPROBADOS
-            </span>
           </div>
         </Reveal>
       </div>

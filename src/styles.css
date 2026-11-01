@@ -10,7 +10,9 @@
  */
 
 @theme inline {
-  --font-display: "Cormorant Garamond", "Playfair Display", "Times New Roman", serif;
+  --font-display: "Italiana", "Cormorant Garamond", serif;
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+  --font-script: "Alex Brush", cursive;
   --font-sans: "Plus Jakarta Sans", "Manrope", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);

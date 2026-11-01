@@ -1,38 +1,33 @@
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/motion/Reveal";
 import { useUI } from "@/store/ui-store";
 
-const SERVICES = [
+const CARDS = [
   {
-    num: "1.",
-    tag: "POINT ONE · DIRECTIVOS & C-LEVEL",
+    point: "Point one",
     title: "Imagen Ejecutiva",
-    desc: "Diseñada para directores, CEOs y líderes corporativos. Desarrollamos un código visual de autoridad, elegancia sobria y congruencia que refuerza tu capacidad de liderazgo en juntas de consejo y negociaciones clave.",
-    price: "$14,500 MXN",
+    desc: "Para directores, CEOs y líderes corporativos. Código visual de autoridad, elegancia sobria y congruencia que refuerza tu capacidad de liderazgo en juntas de consejo y negociaciones clave.",
+    num: "1.",
     id: "imagen-ejecutiva",
   },
   {
-    num: "2.",
-    tag: "POINT TWO · ASESORÍA INDIVIDUAL",
+    point: "Point two",
     title: "Imagen Personal",
-    desc: "Análisis integral de morfología, estudio de colorimetría y reestructuración inteligente de guardarropa personal. Descubre tu estilo auténtico y optimiza tus combinaciones diarias con criterio y sofisticación.",
-    price: "$8,900 MXN",
+    desc: "Análisis integral de morfología, estudio de colorimetría y reestructuración inteligente de guardarropa personal. Descubre tu estilo auténtico y optimiza tus combinaciones con criterio y sofisticación.",
+    num: "2.",
     id: "imagen-personal",
   },
   {
-    num: "3.",
-    tag: "POINT THREE · MEDIOS & ORATORIA",
+    point: "Point three",
     title: "Imagen Pública",
     desc: "Estrategia reputacional y entrenamiento en comunicación no verbal para voceros, conferencistas y figuras públicas. Dominio de entrevistas, presencia escénica y proyección de máxima seguridad.",
-    price: "$16,800 MXN",
+    num: "3.",
     id: "imagen-publica",
   },
   {
-    num: "4.",
-    tag: "POINT FOUR · INSTITUCIONAL",
+    point: "Point four",
     title: "Imagen para Empresas",
     desc: "Transformación de la proyección de equipos directivos y fuerza de negocios. Elaboración de manuales de código de vestimenta corporativo, protocolo empresarial y talleres institucionales.",
-    price: "$24,000 MXN",
+    num: "4.",
     id: "imagen-empresas",
   },
 ];
@@ -41,66 +36,42 @@ export function ShowitInsidePackage() {
   const { openBookingModal } = useUI();
 
   return (
-    <section id="servicios" className="scroll-mt-20 bg-[#EFECE6] text-[#1A1A1A] py-20 lg:py-32 border-b border-[#DDD8CF]">
-      <div className="mx-auto max-w-[1360px] px-6 sm:px-10 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <section id="whats-inside" className="scroll-mt-14 bg-[#F5F2EB] text-[#1A1A1A] py-20 lg:py-32 border-b border-[#DDD8CF]">
+      <div className="mx-auto max-w-[1200px] px-6 sm:px-10 lg:px-16">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
           {/* Left Column: Heading */}
-          <div className="lg:col-span-4 lg:sticky lg:top-28">
+          <div className="md:col-span-4 md:sticky md:top-24">
             <Reveal variant="up">
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#7A756D] mb-4 block">
-                CATÁLOGO DE SOLUCIONES
-              </span>
-              <h2 className="font-display text-[clamp(2.25rem,4.5vw,3.75rem)] font-light leading-[1] text-[#1A1A1A] uppercase">
-                Estructura de Servicios
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-light leading-tight">
+                What Is Inside <br />
+                The Package
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-[#5A554D] font-light max-w-sm">
-                Cuatro soluciones sobrias, estructuradas con rigor técnico y visión editorial para cada objetivo de proyección.
+              <p className="mt-4 font-serif text-xs text-[#5A554D] leading-relaxed max-w-xs">
+                Cuatro soluciones sobrias y estructuradas con rigor técnico para cada objetivo de proyección ejecutiva y personal.
               </p>
-              <div className="mt-8">
-                <button
-                  type="button"
-                  onClick={() => openBookingModal()}
-                  className="bg-[#1A1A1A] text-[#F4F1EA] px-7 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] transition-all hover:bg-[#333333]"
-                >
-                  Agendar Diagnóstico
-                </button>
-              </div>
             </Reveal>
           </div>
 
-          {/* Right Column: Numbered Minimalist Cards (1., 2., 3., 4.) */}
-          <div className="lg:col-span-8 space-y-5">
-            {SERVICES.map((s, i) => (
-              <Reveal key={s.id} delay={i * 80} variant="up">
-                <div className="bg-[#E5E1D9] border border-[#D5D0C5] p-7 sm:p-9 transition-all hover:border-[#1A1A1A] group">
-                  <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
-                    <div className="flex-1">
-                      <span className="text-[0.62rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] block mb-2">
-                        {s.tag}
+          {/* Right Column: Stacked Point Cards matching Showit template */}
+          <div className="md:col-span-8 space-y-4">
+            {CARDS.map((card, i) => (
+              <Reveal key={card.num} delay={i * 70} variant="up">
+                <div
+                  onClick={() => openBookingModal(card.id)}
+                  className="bg-[#E7E2D9] border border-[#D8D2C7] p-7 sm:p-9 cursor-pointer transition-colors hover:border-[#1A1A1A] group"
+                >
+                  <div className="flex items-start justify-between gap-6">
+                    <div className="flex-1 pr-4">
+                      <span className="font-serif italic text-sm text-[#1A1A1A] block mb-1">
+                        {card.point} — {card.title}
                       </span>
-                      <h3 className="font-display text-2xl sm:text-3xl font-light text-[#1A1A1A] group-hover:text-black transition-colors">
-                        {s.title}
-                      </h3>
-                      <p className="mt-3 text-sm leading-relaxed text-[#5A554D] font-light max-w-lg">
-                        {s.desc}
+                      <p className="font-serif text-xs sm:text-sm text-[#4A453D] leading-relaxed font-light">
+                        {card.desc}
                       </p>
-                      <div className="mt-6 flex items-center gap-6">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-[#1A1A1A]">
-                          Inversión: {s.price}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => openBookingModal(s.id)}
-                          className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5 hover:text-[#7A756D] hover:border-[#7A756D] transition-colors"
-                        >
-                          Reservar
-                          <ArrowRight className="size-3" />
-                        </button>
-                      </div>
                     </div>
 
-                    <div className="font-display text-5xl sm:text-6xl font-light text-[#A8A298] group-hover:text-[#1A1A1A] transition-colors self-end sm:self-start">
-                      {s.num}
+                    <div className="font-display text-4xl sm:text-5xl font-light text-[#2A251D] group-hover:text-black transition-colors shrink-0">
+                      {card.num}
                     </div>
                   </div>
                 </div>
