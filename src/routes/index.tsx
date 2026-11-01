@@ -6,7 +6,6 @@ import { ShowitIdealClient } from "@/components/home/ShowitIdealClient";
 import { ShowitInsidePackage } from "@/components/home/ShowitInsidePackage";
 import { ShowitInvestment } from "@/components/home/ShowitInvestment";
 import { ShowitPaintPicture } from "@/components/home/ShowitPaintPicture";
-import { ShowitTopBanner } from "@/components/home/ShowitTopBanner";
 import { ShowitVipDark } from "@/components/home/ShowitVipDark";
 import { ShowitYouWillGet } from "@/components/home/ShowitYouWillGet";
 import { SiteHeader } from "@/components/site/SiteHeader";
@@ -35,37 +34,34 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <>
-      {/* 1. Presentation banner: Showit WEBSITE TEMPLATE */}
-      <ShowitTopBanner />
-
-      {/* 2. Hero Section: Woman in black blazer, YOUR UNIQUE PROGRAM OR A COURSE NAME, (I got you!) */}
+      {/* 1. Hero Section: Woman in black blazer, YOUR UNIQUE PROGRAM or a COURSE NAME, (I got you!) */}
       <ShowitHero />
 
-      {/* 3. Header bar: Logo | YOU WILL GET | WHAT'S INSIDE | INVESTMENT | ABOUT | IDEAL CLIENT | FAQ | APPLY HERE */}
+      {/* 2. Header bar: Logo | YOU WILL GET | WHAT INSIDE | INVESTMENT | ABOUT | IDEAL CLIENT | FAQ | TESTIMONIALS | APPLY HERE */}
       <SiteHeader />
 
-      {/* 4. IMAGINE THIS... / PAINT A PICTURE */}
+      {/* 3. IMAGINE THIS... / PAINT A PICTURE */}
       <ShowitPaintPicture />
 
-      {/* 5. INTRODUCING / VIP DAYS PACKAGE with Laptop Mockup */}
+      {/* 4. INTRODUCING / VIP DAYS PACKAGE with Laptop Mockup */}
       <ShowitVipDark />
 
-      {/* 6. YOU WILL GET: */}
+      {/* 5. YOU WILL GET: */}
       <ShowitYouWillGet />
 
-      {/* 7. What Is Inside The Package: Point one, Point two, Point three, Point four */}
+      {/* 6. What Is Inside The Package: Point one, Point two, Point three, Point four */}
       <ShowitInsidePackage />
 
-      {/* 8. IDEAL CLIENT */}
+      {/* 7. IDEAL CLIENT */}
       <ShowitIdealClient />
 
-      {/* 9. ABOUT */}
+      {/* 8. ABOUT */}
       <ShowitAbout />
 
-      {/* 10. INVESTMENT */}
+      {/* 9. INVESTMENT */}
       <ShowitInvestment />
 
-      {/* 11. FAQ */}
+      {/* 10. FAQ */}
       <ShowitFaq />
     </>
   );

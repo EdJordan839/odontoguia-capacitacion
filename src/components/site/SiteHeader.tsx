@@ -5,11 +5,12 @@ import { useUI } from "@/store/ui-store";
 
 const NAV_LINKS = [
   { name: "YOU WILL GET", href: "#you-will-get" },
-  { name: "WHAT'S INSIDE", href: "#whats-inside" },
+  { name: "WHAT INSIDE", href: "#whats-inside" },
   { name: "INVESTMENT", href: "#investment" },
   { name: "ABOUT", href: "#about" },
   { name: "IDEAL CLIENT", href: "#ideal-client" },
   { name: "FAQ", href: "#faq" },
+  { name: "TESTIMONIALS", href: "#testimonios" },
 ];
 
 export function SiteHeader() {
@@ -17,7 +18,7 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -26,8 +27,8 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 transition-all duration-300 border-b border-[#DDD8CF]",
-        scrolled ? "bg-[#EAE5DE]/95 backdrop-blur-md shadow-xs" : "bg-[#EAE5DE]",
+        "sticky top-0 z-40 transition-all duration-300 border-t border-b border-[#DDD8CF] bg-[#F5F2EB]",
+        scrolled ? "shadow-sm bg-[#F5F2EB]/95 backdrop-blur-md" : "",
       )}
     >
       <div className="mx-auto flex h-14 max-w-[1360px] items-center justify-between px-6 sm:px-10 lg:px-16">
@@ -43,13 +44,16 @@ export function SiteHeader() {
           </button>
         </div>
 
-        {/* Script Logo like in Showit template */}
-        <a href="/" className="font-script text-3xl sm:text-4xl text-[#1A1A1A] leading-none pt-1">
-          Yes I'am
+        {/* Logo matching exact font and look from screenshot */}
+        <a
+          href="/"
+          className="font-serif italic text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight leading-none"
+        >
+          Logo
         </a>
 
-        {/* Desktop Minimal Navigation matching Showit template */}
-        <nav aria-label="Navegación principal" className="hidden items-center gap-6 lg:gap-8 lg:flex">
+        {/* Desktop Navigation Links matching exact items in screenshot */}
+        <nav aria-label="Navegación principal" className="hidden items-center gap-5 xl:gap-7 lg:flex">
           {NAV_LINKS.map((item) => (
             <a
               key={item.name}
@@ -61,12 +65,12 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        {/* Right CTA Action: APPLY HERE */}
+        {/* Right CTA: APPLY HERE */}
         <div className="flex items-center">
           <button
             type="button"
             onClick={() => openBookingModal()}
-            className="text-[0.68rem] font-semibold uppercase tracking-[0.25em] text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5 hover:text-[#6A655D] hover:border-[#6A655D] transition-colors"
+            className="text-[0.68rem] font-semibold uppercase tracking-[0.25em] text-[#1A1A1A] border-b border-transparent hover:border-[#1A1A1A] pb-0.5 transition-colors"
           >
             APPLY HERE
           </button>
