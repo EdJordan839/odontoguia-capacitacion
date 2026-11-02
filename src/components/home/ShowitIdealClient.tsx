@@ -3,7 +3,7 @@ import { Reveal } from "@/components/motion/Reveal";
 
 export function ShowitIdealClient() {
   return (
-    <section id="cliente-ideal" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#DDD8CF]">
+    <section id="cliente-ideal" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#D2CDC4]">
       <div id="ideal-client" className="scroll-mt-16">
         <div className="mx-auto max-w-5xl px-6 sm:px-10">
           <div className="text-center mb-12">
@@ -23,8 +23,8 @@ export function ShowitIdealClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1: Esto es para ti si... */}
             <Reveal variant="left">
-              <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-10 h-full">
-                <span className="font-serif italic text-lg text-[#1A1A1A] block mb-5 border-b border-[#D5D0C5] pb-3">
+              <div className="bg-[#E6E3DB] border border-[#D2CDC4] p-8 sm:p-10 h-full transition-colors hover:bg-[#DDD9D0]">
+                <span className="font-serif italic text-lg text-[#1A1A1A] block mb-5 border-b border-[#D2CDC4] pb-3">
                   Esto es para ti si...
                 </span>
                 <ul className="space-y-3.5">
@@ -45,8 +45,8 @@ export function ShowitIdealClient() {
 
             {/* Card 2: Esto no es para ti si... */}
             <Reveal variant="right" delay={80}>
-              <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-10 h-full">
-                <span className="font-serif italic text-lg text-[#7A756D] block mb-5 border-b border-[#D5D0C5] pb-3">
+              <div className="bg-[#E6E3DB] border border-[#D2CDC4] p-8 sm:p-10 h-full transition-colors hover:bg-[#DDD9D0]">
+                <span className="font-serif italic text-lg text-[#7A756D] block mb-5 border-b border-[#D2CDC4] pb-3">
                   Esto no es para ti si...
                 </span>
                 <ul className="space-y-3.5">

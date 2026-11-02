@@ -43,7 +43,7 @@ export function ShowitAbout() {
 
                 <div className="mt-6 py-4 border-t border-b border-[#DDD8CF] w-full">
                   <blockquote className="font-serif italic text-base sm:text-lg text-[#2A251D] leading-snug">
-                    “La verdadera elegancia no busca llamar la atención a gritos, sino ser recordada con respeto y autoridad indiscutible.”
+                    “Porque La imagen no es vanidad, es identidad”
                   </blockquote>
                 </div>
 
