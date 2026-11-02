@@ -3,28 +3,28 @@ import { useUI } from "@/store/ui-store";
 
 const CARDS = [
   {
-    pointLabel: "Point one",
+    pointLabel: "Punto uno",
     serviceName: "Imagen Ejecutiva",
     desc: "Para directores, CEOs y líderes corporativos. Código visual de autoridad, elegancia sobria y congruencia que refuerza tu capacidad de liderazgo en juntas de consejo y negociaciones clave.",
     num: "1.",
     id: "imagen-ejecutiva",
   },
   {
-    pointLabel: "Point two",
+    pointLabel: "Punto dos",
     serviceName: "Imagen Personal",
     desc: "Análisis integral de morfología, estudio de colorimetría y reestructuración inteligente de guardarropa personal. Descubre tu estilo auténtico y optimiza tus combinaciones con criterio y sofisticación.",
     num: "2.",
     id: "imagen-personal",
   },
   {
-    pointLabel: "Point three",
+    pointLabel: "Punto tres",
     serviceName: "Imagen Pública",
     desc: "Estrategia reputacional y entrenamiento en comunicación no verbal para voceros, conferencistas y figuras públicas. Dominio de entrevistas, presencia escénica y proyección de máxima seguridad.",
     num: "3.",
     id: "imagen-publica",
   },
   {
-    pointLabel: "Point four",
+    pointLabel: "Punto cuatro",
     serviceName: "Imagen para Empresas",
     desc: "Transformación de la proyección de equipos directivos y fuerza de negocios. Elaboración de manuales de código de vestimenta corporativo, protocolo empresarial y talleres institucionales.",
     num: "4.",
@@ -45,8 +45,8 @@ export function ShowitInsidePackage() {
             <div className="md:col-span-4 p-8 sm:p-12 md:border-r border-b md:border-b-0 border-[#D2CDC4] flex flex-col justify-start md:sticky md:top-24 self-start">
               <Reveal variant="up">
                 <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-normal leading-tight">
-                  What Is Inside <br />
-                  The Package
+                  Lo que incluye <br />
+                  el programa
                 </h2>
                 <p className="mt-4 font-sans text-sm text-[#5A554D] leading-relaxed font-normal max-w-xs">
                   Cuatro programas estructurados con rigor técnico y visión editorial para cada etapa de tu proyección.
