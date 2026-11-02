@@ -146,6 +146,8 @@
   .font-display {
     font-family: var(--font-display);
     letter-spacing: -0.015em;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1;
   }
 
   ::selection {

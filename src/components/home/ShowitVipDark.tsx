@@ -9,11 +9,11 @@ export function ShowitVipDark() {
     <section className="relative bg-[#141414] text-[#F5F2EB] py-16 sm:py-24 border-b border-black">
       <div className="mx-auto max-w-4xl px-6 sm:px-10 text-center">
         <Reveal variant="up">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#F5F2EB] font-normal leading-tight">
-            Diagnóstico VIP 360°
+          <h2 className="font-serif text-3xl sm:text-4xl text-[#F5F2EB] font-normal leading-tight">
+            Diagnóstico VIP 360
           </h2>
 
-          <p className="mt-3 font-sans text-sm sm:text-base text-[#C8C2B8] max-w-xl mx-auto leading-relaxed font-normal">
+          <p className="mt-3 font-sans text-sm sm:text-base text-[#C8C2B8] max-w-lg mx-auto leading-relaxed font-normal">
             Inmersión presencial o digital de imagen ejecutiva, estilismo de negocios y presencia de alto nivel.
           </p>
 
