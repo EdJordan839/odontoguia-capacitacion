@@ -10,21 +10,21 @@ const BULLETS = [
 
 export function ShowitPaintPicture() {
   return (
-    <section className="bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#DDD8CF]">
-      <div className="mx-auto max-w-2xl px-6 sm:px-10 text-center">
+    <section className="bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 lg:py-32 border-b border-[#DDD8CF]">
+      <div className="mx-auto max-w-3xl px-6 sm:px-10 text-center">
         <Reveal variant="up">
-          <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-normal leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1A1A1A] font-normal leading-tight">
             Una imagen que refuerza tu marca
           </h2>
-          <p className="mt-3 font-sans text-sm sm:text-base text-[#4A453D] leading-relaxed font-normal max-w-lg mx-auto">
+          <p className="mt-4 font-sans text-sm sm:text-base text-[#4A453D] leading-relaxed font-normal max-w-xl mx-auto">
             Capta la atención de tu industria y comunica autoridad antes de hablar.
           </p>
 
-          <div className="mt-10 text-left space-y-3.5 max-w-lg mx-auto">
+          <div className="mt-10 lg:mt-12 text-left space-y-3.5 sm:space-y-4 max-w-xl mx-auto">
             {BULLETS.map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
+              <div key={i} className="flex items-start gap-3.5">
                 <Check className="size-4 text-[#1A1A1A] shrink-0 mt-0.5 stroke-[1.75]" />
-                <p className="font-sans text-sm text-[#3A352D] font-normal leading-relaxed">
+                <p className="font-sans text-sm sm:text-base text-[#3A352D] font-normal leading-relaxed">
                   {item}
                 </p>
               </div>

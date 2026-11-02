@@ -29,25 +29,25 @@ export function ShowitFaq() {
   };
 
   return (
-    <section id="faq" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#DDD8CF]">
-      <div className="mx-auto max-w-[900px] px-6 sm:px-10">
-        <div className="text-center mb-12">
+    <section id="faq" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 lg:py-32 border-b border-[#DDD8CF]">
+      <div className="mx-auto max-w-3xl lg:max-w-4xl px-6 sm:px-10">
+        <div className="text-center mb-12 lg:mb-16">
           <Reveal variant="up">
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-normal leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1A1A1A] font-normal leading-tight">
               Preguntas frecuentes
             </h2>
-            <p className="mt-3 font-sans text-sm text-[#5A554D] font-normal">
+            <p className="mt-3 font-sans text-sm sm:text-base text-[#5A554D] font-normal">
               Respuestas a las dudas más comunes sobre la metodología y el proceso de asesoría.
             </p>
           </Reveal>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-3.5 sm:space-y-4">
           {FAQS.map((faq, i) => {
             const isOpen = openIndex === i;
             return (
               <Reveal key={i} delay={i * 50} variant="up">
-                <div className="border border-[#D2CDC4] bg-[#E6E3DB] p-6 transition-colors">
+                <div className="border border-[#D2CDC4] bg-[#E6E3DB] p-6 lg:p-7 transition-colors">
                   <button
                     type="button"
                     onClick={() => toggle(i)}
@@ -62,7 +62,7 @@ export function ShowitFaq() {
                   </button>
 
                   {isOpen && (
-                    <p className="mt-4 font-sans text-sm text-[#4A453D] leading-relaxed font-normal border-t border-[#D2CDC4] pt-3">
+                    <p className="mt-4 font-sans text-sm sm:text-base text-[#4A453D] leading-relaxed font-normal border-t border-[#D2CDC4] pt-4">
                       {faq.a}
                     </p>
                   )}

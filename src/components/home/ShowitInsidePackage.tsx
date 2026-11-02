@@ -36,15 +36,15 @@ export function ShowitInsidePackage() {
   const { openBookingModal } = useUI();
 
   return (
-    <section id="que-incluye" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#DDD8CF]">
+    <section id="que-incluye" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 lg:py-32 border-b border-[#DDD8CF]">
       <div id="servicios" className="scroll-mt-16">
-        <div className="mx-auto max-w-[1260px] px-4 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-[1360px] px-4 sm:px-8 lg:px-12">
           <div className="border border-[#D2CDC4] bg-[#F5F2EB] grid grid-cols-1 md:grid-cols-12">
             
             {/* Left Column */}
-            <div className="md:col-span-4 p-8 sm:p-12 md:border-r border-b md:border-b-0 border-[#D2CDC4] flex flex-col justify-start md:sticky md:top-24 self-start">
+            <div className="md:col-span-4 p-8 sm:p-12 lg:p-14 md:border-r border-b md:border-b-0 border-[#D2CDC4] flex flex-col justify-start md:sticky md:top-28 self-start">
               <Reveal variant="up">
-                <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-normal leading-tight">
+                <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#1A1A1A] font-normal leading-tight">
                   Lo que incluye <br />
                   el programa
                 </h2>
@@ -70,7 +70,7 @@ export function ShowitInsidePackage() {
                   <Reveal delay={i * 70} variant="up">
                     <div
                       onClick={() => openBookingModal(card.id)}
-                      className="bg-[#E6E3DB] p-7 sm:p-9 lg:p-10 flex items-center justify-between gap-6 transition-colors hover:bg-[#DDD9D0] cursor-pointer group select-none"
+                      className="bg-[#E6E3DB] p-7 sm:p-9 lg:p-11 flex items-center justify-between gap-6 transition-colors hover:bg-[#DDD9D0] cursor-pointer group select-none"
                     >
                       <div className="max-w-xl pr-2">
                         <h3 className="font-serif text-2xl sm:text-3xl text-[#1A1A1A] font-normal tracking-tight mb-2">
@@ -81,7 +81,7 @@ export function ShowitInsidePackage() {
                         </p>
                       </div>
 
-                      <div className="font-serif text-5xl sm:text-6xl text-[#1A1A1A] font-light shrink-0 pl-4 self-center">
+                      <div className="font-serif text-5xl sm:text-6xl lg:text-7xl font-light text-[#1A1A1A] shrink-0 pl-4 self-center">
                         {card.num}
                       </div>
                     </div>
