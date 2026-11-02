@@ -16,11 +16,11 @@ export function Logo({ className, onClick }: LogoProps) {
       aria-label="YES I'AM — Consultoría de Imagen y Marca Personal"
       className={cn("inline-flex items-center leading-none transition-opacity hover:opacity-90", className)}
     >
-      <div className="relative h-10 px-2.5 bg-black rounded flex items-center justify-center border border-white/20 shadow-xs shrink-0 overflow-hidden">
+      <div className="relative h-12 sm:h-14 px-3 sm:px-4 bg-black rounded-sm flex items-center justify-center border border-white/20 shadow-sm shrink-0 overflow-hidden">
         <img
           src={yesiamBrandLogo}
           alt="YES I'AM"
-          className="h-8 w-auto object-contain"
+          className="h-9 sm:h-11 w-auto object-contain select-none"
         />
       </div>
     </Link>

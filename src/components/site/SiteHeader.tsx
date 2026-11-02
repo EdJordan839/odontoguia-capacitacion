@@ -32,7 +32,7 @@ export function SiteHeader() {
         scrolled ? "shadow-sm bg-[#F5F2EB]/95 backdrop-blur-md" : "",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-[1360px] items-center justify-between px-6 sm:px-10 lg:px-16">
+      <div className="mx-auto flex h-18 sm:h-20 max-w-[1360px] items-center justify-between px-6 sm:px-10 lg:px-16">
         {/* Mobile menu toggle */}
         <div className="flex items-center lg:hidden">
           <button

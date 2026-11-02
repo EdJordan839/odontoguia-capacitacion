@@ -14,7 +14,7 @@ export function SiteFooter() {
             <img
               src={yesiamBrandLogo}
               alt="YES I'AM"
-              className="h-10 w-auto object-contain mb-4"
+              className="h-14 sm:h-16 w-auto object-contain mb-5"
             />
             <p className="text-[0.62rem] font-semibold uppercase tracking-[0.35em] text-[#A8A298]">
               Consultoría de Imagen & Marca Personal
