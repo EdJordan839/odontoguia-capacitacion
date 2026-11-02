@@ -25,24 +25,20 @@ export function ShowitAbout() {
             {/* Right Column: About details */}
             <div className="lg:col-span-7 flex flex-col items-start">
               <Reveal variant="up">
-                <span className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] mb-3 block">
-                  SOBRE LA CONSULTORA
-                </span>
-
-                <h2 className="font-serif text-[clamp(2rem,4vw,3.25rem)] font-light leading-[1.05] text-[#1A1A1A] uppercase tracking-[0.04em]">
-                  Técnica, Sobriedad y Sofisticación Sin Excesos
+                <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-normal leading-tight">
+                  Técnica, sobriedad y sofisticación sin excesos
                 </h2>
 
-                <p className="mt-5 font-sans text-xs sm:text-sm leading-relaxed text-[#3A352D] font-normal">
+                <p className="mt-5 font-sans text-sm sm:text-base leading-relaxed text-[#3A352D] font-normal">
                   Consultora especializada en arquitectura de imagen pública, estilismo ejecutivo y comunicación estratégica de marca personal. Con más de una década de experiencia asesorando a líderes directivos, socios corporativos, voceros y empresarios en Chihuahua y a nivel internacional.
                 </p>
 
-                <p className="mt-3.5 font-sans text-xs sm:text-sm leading-relaxed text-[#4A453D] font-normal">
+                <p className="mt-3.5 font-sans text-sm sm:text-base leading-relaxed text-[#4A453D] font-normal">
                   Su metodología prioriza el rigor técnico por encima de modas efímeras: colorimetría científica, proporción morfológica y curaduría de guardarropas inteligentes donde cada detalle comunica autoridad, estatus y serenidad.
                 </p>
 
                 <div className="mt-6 py-4 border-t border-b border-[#DDD8CF] w-full">
-                  <blockquote className="font-serif italic text-base sm:text-lg text-[#2A251D] leading-snug">
+                  <blockquote className="font-serif text-lg sm:text-xl text-[#2A251D] leading-snug">
                     “Porque La imagen no es vanidad, es identidad”
                   </blockquote>
                 </div>
@@ -51,17 +47,17 @@ export function ShowitAbout() {
                   <button
                     type="button"
                     onClick={() => openBookingModal()}
-                    className="font-sans bg-[#1A1A1A] text-[#F5F2EB] px-7 py-3 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors"
+                    className="font-sans bg-[#1A1A1A] text-[#F5F2EB] px-7 py-3 text-xs font-semibold uppercase tracking-wider hover:bg-[#333333] transition-colors"
                   >
-                    AGENDAR CONSULTA
+                    Agendar consulta
                   </button>
                   <a
                     href="https://wa.me/526141879067?text=Hola%20YES%20I'AM%2C%20quisiera%20agendar%20una%20sesi%C3%B3n"
                     target="_blank"
                     rel="noreferrer"
-                    className="font-sans text-xs font-medium text-[#5A554D] hover:text-[#1A1A1A] transition-colors"
+                    className="font-sans text-sm text-[#4A453D] hover:text-[#1A1A1A] transition-colors"
                   >
-                    WhatsApp Directo: +52 614 187 9067
+                    WhatsApp directo: +52 614 187 9067
                   </a>
                 </div>
               </Reveal>

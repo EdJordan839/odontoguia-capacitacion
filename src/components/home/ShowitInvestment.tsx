@@ -11,13 +11,10 @@ export function ShowitInvestment() {
         <div className="mx-auto max-w-4xl px-6 sm:px-10">
           <div className="text-center mb-12">
             <Reveal variant="up">
-              <span className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] mb-3 block">
-                MODALIDADES & RESERVAS
-              </span>
-              <h2 className="font-serif text-2xl sm:text-3xl tracking-[0.06em] text-[#1A1A1A] uppercase">
-                INVERSIÓN
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-normal leading-tight">
+                Inversión y modalidades
               </h2>
-              <p className="mt-2 font-sans text-xs sm:text-sm text-[#5A554D] font-normal">
+              <p className="mt-3 font-sans text-sm sm:text-base text-[#5A554D] font-normal max-w-lg mx-auto">
                 Disponibilidad exclusiva de plazas limitadas por mes para atención individualizada.
               </p>
             </Reveal>
@@ -26,33 +23,33 @@ export function ShowitInvestment() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Card 1: Presencial Chihuahua */}
             <Reveal variant="left">
-              <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-9 flex flex-col justify-between h-full hover:border-[#1A1A1A] transition-all">
+              <div className="bg-[#E6E3DB] border border-[#D2CDC4] p-8 sm:p-9 flex flex-col justify-between h-full hover:bg-[#DDD9D0] transition-colors">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-[#7A756D]">
-                      Atelier Privado
+                    <span className="font-sans text-xs uppercase tracking-wider text-[#7A756D] font-medium">
+                      Atelier privado
                     </span>
-                    <MapPin className="size-3.5 text-[#1A1A1A]" />
+                    <MapPin className="size-4 text-[#1A1A1A]" />
                   </div>
-                  <h3 className="font-serif text-xl sm:text-2xl font-light text-[#1A1A1A]">
-                    Modalidad Presencial
+                  <h3 className="font-serif text-2xl text-[#1A1A1A] font-normal">
+                    Modalidad presencial
                   </h3>
-                  <p className="font-sans text-[0.68rem] uppercase tracking-widest text-[#7A756D] mt-1">
+                  <p className="font-sans text-xs text-[#7A756D] mt-1">
                     Chihuahua, Chih., México
                   </p>
-                  <p className="mt-4 font-sans text-xs sm:text-sm text-[#4A453D] font-normal leading-relaxed">
+                  <p className="mt-4 font-sans text-sm text-[#4A453D] font-normal leading-relaxed">
                     Diagnóstico presencial con telas de calibración cromática, auditoría física de armario en tu residencia o despacho y acompañamiento personalizado a sastrería.
                   </p>
                 </div>
 
-                <div className="mt-8 pt-5 border-t border-[#D5D0C5]">
+                <div className="mt-8 pt-5 border-t border-[#D2CDC4]">
                   <button
                     type="button"
                     onClick={() => openBookingModal()}
-                    className="font-sans w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
+                    className="font-sans w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-wider hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
                   >
-                    Agendar Presencial
-                    <ArrowRight className="size-3" />
+                    Agendar presencial
+                    <ArrowRight className="size-3.5" />
                   </button>
                 </div>
               </div>
@@ -60,33 +57,33 @@ export function ShowitInvestment() {
 
             {/* Card 2: Online Global */}
             <Reveal variant="right" delay={80}>
-              <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-9 flex flex-col justify-between h-full hover:border-[#1A1A1A] transition-all">
+              <div className="bg-[#E6E3DB] border border-[#D2CDC4] p-8 sm:p-9 flex flex-col justify-between h-full hover:bg-[#DDD9D0] transition-colors">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-[#7A756D]">
-                      Sesiones HD Globales
+                    <span className="font-sans text-xs uppercase tracking-wider text-[#7A756D] font-medium">
+                      Sesiones HD globales
                     </span>
-                    <Video className="size-3.5 text-[#1A1A1A]" />
+                    <Video className="size-4 text-[#1A1A1A]" />
                   </div>
-                  <h3 className="font-serif text-xl sm:text-2xl font-light text-[#1A1A1A]">
-                    Modalidad Online HD
+                  <h3 className="font-serif text-2xl text-[#1A1A1A] font-normal">
+                    Modalidad online HD
                   </h3>
-                  <p className="font-sans text-[0.68rem] uppercase tracking-widest text-[#7A756D] mt-1">
-                    Videollamada en Directo
+                  <p className="font-sans text-xs text-[#7A756D] mt-1">
+                    Videollamada en directo
                   </p>
-                  <p className="mt-4 font-sans text-xs sm:text-sm text-[#4A453D] font-normal leading-relaxed">
+                  <p className="mt-4 font-sans text-sm text-[#4A453D] font-normal leading-relaxed">
                     Diagnóstico a distancia de alta resolución, lookbook digital interactivo y canal privado de consulta para directivos y líderes internacionales.
                   </p>
                 </div>
 
-                <div className="mt-8 pt-5 border-t border-[#D5D0C5]">
+                <div className="mt-8 pt-5 border-t border-[#D2CDC4]">
                   <button
                     type="button"
                     onClick={() => openBookingModal()}
-                    className="font-sans w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
+                    className="font-sans w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-wider hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
                   >
-                    Agendar Online
-                    <ArrowRight className="size-3" />
+                    Agendar online
+                    <ArrowRight className="size-3.5" />
                   </button>
                 </div>
               </div>
