@@ -29,15 +29,15 @@ export function ShowitFaq() {
   };
 
   return (
-    <section id="faq" className="scroll-mt-14 bg-[#F5F2EB] text-[#1A1A1A] py-20 lg:py-28 border-b border-[#DDD8CF]">
+    <section id="faq" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#DDD8CF]">
       <div className="mx-auto max-w-[900px] px-6 sm:px-10">
-        <div className="text-center mb-14">
+        <div className="text-center mb-12">
           <Reveal variant="up">
-            <span className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#7A756D] mb-3 block">
-              PREGUNTAS FRECUENTES
+            <span className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] mb-3 block">
+              DUDAS COMUNES
             </span>
-            <h2 className="font-display text-2xl sm:text-3xl tracking-[0.12em] text-[#1A1A1A] uppercase">
-              FREQUENTLY ASKED QUESTIONS
+            <h2 className="font-serif text-2xl sm:text-3xl tracking-[0.06em] text-[#1A1A1A] uppercase">
+              PREGUNTAS FRECUENTES
             </h2>
           </Reveal>
         </div>
@@ -62,7 +62,7 @@ export function ShowitFaq() {
                   </button>
 
                   {isOpen && (
-                    <p className="mt-4 font-serif text-xs sm:text-sm text-[#4A453D] leading-relaxed font-light border-t border-[#D5D0C5] pt-3">
+                    <p className="mt-4 font-sans text-xs sm:text-sm text-[#4A453D] leading-relaxed font-normal border-t border-[#D5D0C5] pt-3">
                       {faq.a}
                     </p>
                   )}

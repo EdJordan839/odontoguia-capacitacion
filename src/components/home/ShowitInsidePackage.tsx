@@ -45,21 +45,21 @@ export function ShowitInsidePackage() {
             {/* Left Column: What Is Inside The Package */}
             <div className="md:col-span-4 p-8 sm:p-12 md:border-r border-b md:border-b-0 border-[#D2CDC4] flex flex-col justify-start md:sticky md:top-24 self-start">
               <Reveal variant="up">
-                <span className="text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] block mb-3">
+                <span className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] block mb-3">
                   LO QUE INCLUYE
                 </span>
                 <h2 className="font-serif text-3xl sm:text-4xl text-[#1A1A1A] font-light leading-snug">
                   What Is Inside <br />
                   The Package
                 </h2>
-                <p className="mt-4 font-serif text-xs text-[#5A554D] leading-relaxed max-w-xs">
+                <p className="mt-4 font-sans text-xs text-[#5A554D] leading-relaxed max-w-xs font-normal">
                   Cuatro programas estructurados con rigor técnico y visión editorial para cada etapa de tu proyección.
                 </p>
                 <div className="mt-8 pt-6 border-t border-[#D2CDC4]/70">
                   <button
                     type="button"
                     onClick={() => openBookingModal()}
-                    className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5 hover:text-[#6A655D] hover:border-[#6A655D] transition-colors"
+                    className="font-sans text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5 hover:text-[#6A655D] hover:border-[#6A655D] transition-colors"
                   >
                     AGENDAR DIAGNÓSTICO
                   </button>
@@ -84,13 +84,13 @@ export function ShowitInsidePackage() {
                             — {card.serviceName}
                           </span>
                         </h3>
-                        <p className="font-serif text-xs sm:text-sm text-[#4A453D] leading-relaxed font-light">
+                        <p className="font-sans text-xs sm:text-sm text-[#4A453D] leading-relaxed font-normal">
                           {card.desc}
                         </p>
                       </div>
 
                       {/* Right: Slender Didone Large Numeral */}
-                      <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-light text-[#1A1A1A] shrink-0 pl-4 self-center tracking-tight">
+                      <div className="font-serif text-5xl sm:text-6xl lg:text-7xl font-light text-[#1A1A1A] shrink-0 pl-4 self-center tracking-tight">
                         {card.num}
                       </div>
                     </div>

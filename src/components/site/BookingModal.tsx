@@ -52,7 +52,7 @@ export function BookingModal() {
           <span className="text-[0.62rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D]">
             YES I'AM · ATELIER PRIVADO
           </span>
-          <DialogTitle className="font-display text-2xl sm:text-3xl font-light text-[#1A1A1A] uppercase tracking-wide mt-1">
+          <DialogTitle className="font-serif text-2xl sm:text-3xl font-light text-[#1A1A1A] uppercase tracking-wide mt-1">
             Reserva tu Consulta
           </DialogTitle>
           <DialogDescription className="text-xs text-[#5A554D] font-light">

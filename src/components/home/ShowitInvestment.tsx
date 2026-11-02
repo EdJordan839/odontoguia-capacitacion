@@ -6,18 +6,18 @@ export function ShowitInvestment() {
   const { openBookingModal } = useUI();
 
   return (
-    <section id="inversion" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-20 lg:py-28 border-b border-[#DDD8CF]">
+    <section id="inversion" className="scroll-mt-16 bg-[#F5F2EB] text-[#1A1A1A] py-16 sm:py-24 border-b border-[#DDD8CF]">
       <div id="investment" className="scroll-mt-16">
         <div className="mx-auto max-w-4xl px-6 sm:px-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-12">
             <Reveal variant="up">
-              <span className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#7A756D] mb-3 block">
+              <span className="font-sans text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#7A756D] mb-3 block">
                 MODALIDADES & RESERVAS
               </span>
-              <h2 className="font-display text-2xl sm:text-3xl tracking-[0.12em] text-[#1A1A1A] uppercase">
+              <h2 className="font-serif text-2xl sm:text-3xl tracking-[0.06em] text-[#1A1A1A] uppercase">
                 INVERSIÓN
               </h2>
-              <p className="mt-2 font-serif italic text-base text-[#5A554D]">
+              <p className="mt-2 font-sans text-xs sm:text-sm text-[#5A554D] font-normal">
                 Disponibilidad exclusiva de plazas limitadas por mes para atención individualizada.
               </p>
             </Reveal>
@@ -29,7 +29,7 @@ export function ShowitInvestment() {
               <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-9 flex flex-col justify-between h-full hover:border-[#1A1A1A] transition-all">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-serif italic text-xs text-[#7A756D]">
+                    <span className="font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-[#7A756D]">
                       Atelier Privado
                     </span>
                     <MapPin className="size-3.5 text-[#1A1A1A]" />
@@ -37,10 +37,10 @@ export function ShowitInvestment() {
                   <h3 className="font-serif text-xl sm:text-2xl font-light text-[#1A1A1A]">
                     Modalidad Presencial
                   </h3>
-                  <p className="text-[0.68rem] uppercase tracking-widest text-[#7A756D] mt-1">
+                  <p className="font-sans text-[0.68rem] uppercase tracking-widest text-[#7A756D] mt-1">
                     Chihuahua, Chih., México
                   </p>
-                  <p className="mt-5 font-serif text-xs sm:text-sm text-[#4A453D] font-light leading-relaxed">
+                  <p className="mt-4 font-sans text-xs sm:text-sm text-[#4A453D] font-normal leading-relaxed">
                     Diagnóstico presencial con telas de calibración cromática, auditoría física de armario en tu residencia o despacho y acompañamiento personalizado a sastrería.
                   </p>
                 </div>
@@ -49,7 +49,7 @@ export function ShowitInvestment() {
                   <button
                     type="button"
                     onClick={() => openBookingModal()}
-                    className="w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
+                    className="font-sans w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
                   >
                     Agendar Presencial
                     <ArrowRight className="size-3" />
@@ -63,7 +63,7 @@ export function ShowitInvestment() {
               <div className="bg-[#EAE5DE] border border-[#DDD8CF] p-8 sm:p-9 flex flex-col justify-between h-full hover:border-[#1A1A1A] transition-all">
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-serif italic text-xs text-[#7A756D]">
+                    <span className="font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-[#7A756D]">
                       Sesiones HD Globales
                     </span>
                     <Video className="size-3.5 text-[#1A1A1A]" />
@@ -71,10 +71,10 @@ export function ShowitInvestment() {
                   <h3 className="font-serif text-xl sm:text-2xl font-light text-[#1A1A1A]">
                     Modalidad Online HD
                   </h3>
-                  <p className="text-[0.68rem] uppercase tracking-widest text-[#7A756D] mt-1">
+                  <p className="font-sans text-[0.68rem] uppercase tracking-widest text-[#7A756D] mt-1">
                     Videollamada en Directo
                   </p>
-                  <p className="mt-5 font-serif text-xs sm:text-sm text-[#4A453D] font-light leading-relaxed">
+                  <p className="mt-4 font-sans text-xs sm:text-sm text-[#4A453D] font-normal leading-relaxed">
                     Diagnóstico a distancia de alta resolución, lookbook digital interactivo y canal privado de consulta para directivos y líderes internacionales.
                   </p>
                 </div>
@@ -83,7 +83,7 @@ export function ShowitInvestment() {
                   <button
                     type="button"
                     onClick={() => openBookingModal()}
-                    className="w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
+                    className="font-sans w-full bg-[#1A1A1A] text-[#F5F2EB] py-3 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#333333] transition-colors flex items-center justify-center gap-2"
                   >
                     Agendar Online
                     <ArrowRight className="size-3" />
