@@ -59,7 +59,7 @@ export const INITIAL_PROCEDURES: DentalProcedure[] = [
       'Guía completa de captura rápida e impresión inteligente en el sistema web (Módulos: Historia Clínica y Ficha de Exploración / Consulta).',
     externalUrl: 'https://datingscriptlab.com/',
     philosophy:
-      'El sistema está diseñado bajo una filosofía de "Captura Rápida e Impresión Inteligente": muchos campos vienen preconfigurados con valores normales ("Sano", "No", "Negados") para ahorrar tiempo en consulta, y al imprimir en papel tamaño Carta, el sistema limpia y compacta automáticamente lo que no se utilizó para entregar un documento clínico impecable en una sola hoja por sección.',
+      'El sistema cuenta con "Captura Rápida e Impresión Inteligente": muchos campos vienen preconfigurados con valores normales ("Sano", "No", "Negados") para ahorrar tiempo en consulta, y al imprimir en papel tamaño Carta, el sistema limpia y compacta automáticamente lo que no se utilizó para entregar un documento clínico impecable en una sola hoja por sección.',
     modality: 'virtual',
     department: 'Recepción y Administración',
     targetRole: 'Todo el Personal',

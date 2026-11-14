@@ -49,7 +49,7 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
     {
       id: `${procedure.id}-portada`,
       kind: 'Documento',
-      label: 'Presentación y Filosofía del Módulo',
+      label: 'Presentación',
       instruction: procedure.philosophy || procedure.summary,
       bullets: procedure.toolsRequired.map((t) => `Requisito / Herramienta: ${t}`),
       keyCheck: `Ubicación / Sistema: ${procedure.locationOrSystem}`,
