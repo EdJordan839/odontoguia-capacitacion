@@ -325,9 +325,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                   <div className="absolute inset-8 rounded-full border border-white/10 pointer-events-none" />
 
                   <div className="relative z-10 space-y-1.5 pt-2">
-                    <div className="w-12 h-12 rounded-full bg-amber-300 text-[#0F172A] font-extrabold text-lg flex items-center justify-center mx-auto shadow-sm">
-                      OD
-                    </div>
                     <div className="text-xs font-bold tracking-[0.2em] uppercase text-white/95">
                       ODONTOGUÍA
                     </div>
