@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import {
   Check,
-  PanelLeft,
   FileText,
   ZoomOut,
   ZoomIn,
-  Hand,
-  Maximize2,
-  Search,
-  Settings,
   ExternalLink,
   CheckCircle2,
   PlayCircle,
@@ -31,7 +26,6 @@ interface LessonItem {
   section?: string;
   instruction: string;
   bullets?: string[];
-  keyCheck?: string;
   videoUrl?: string;
   isCover?: boolean;
   isGoldenRules?: boolean;
@@ -51,8 +45,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
       kind: 'Documento',
       label: 'Presentación',
       instruction: procedure.philosophy || procedure.summary,
-      bullets: procedure.toolsRequired.map((t) => `Requisito / Herramienta: ${t}`),
-      keyCheck: `Ubicación / Sistema: ${procedure.locationOrSystem}`,
       isCover: true,
     },
     ...(procedure.videoUrl
@@ -75,7 +67,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
       section: s.section,
       instruction: s.instruction,
       bullets: s.bullets,
-      keyCheck: s.keyCheck,
     })),
     ...(procedure.goldenRules && procedure.goldenRules.length > 0
       ? [
@@ -86,7 +77,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
             instruction:
               'Resumen esencial que todo el personal de la clínica debe aplicar en cada consulta:',
             bullets: procedure.goldenRules.map((r) => `${r.title}: ${r.description}`),
-            keyCheck: 'Autoguardado, valores predeterminados e impresión en 1 clic en tamaño Carta.',
             isGoldenRules: true,
           },
         ]
@@ -98,8 +88,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
     [lessons[0].id]: true,
   }));
   const [zoom, setZoom] = useState<number>(100);
-  const [commentText, setCommentText] = useState<string>('');
-  const [savedComments, setSavedComments] = useState<string[]>([]);
 
   const currentLesson = lessons[activeIndex] || lessons[0];
 
@@ -131,22 +119,15 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
     }
   };
 
-  const handleAddComment = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!commentText.trim()) return;
-    setSavedComments((prev) => [...prev, commentText.trim()]);
-    setCommentText('');
-  };
-
   return (
     <div className="min-h-[calc(100vh-57px)] flex flex-row items-stretch bg-[#EEF4F3] text-[#1E293B] overflow-x-auto">
       {/* LEFT SIDEBAR: Always left column side-by-side with right viewer */}
       <aside className="w-[300px] sm:w-[320px] shrink-0 bg-[#F7FAFA] border-r border-[#D5E3E0] flex flex-col justify-between">
         <div>
-          {/* Top Block Header */}
+          {/* Top Course Header */}
           <div className="px-6 pt-6 pb-4 space-y-3 border-b border-[#E2ECE9]">
             <h2 className="text-xs font-extrabold tracking-wide text-[#0F172A] uppercase">
-              BLOQUE I: {procedure.title}
+              {procedure.title}
             </h2>
 
             {/* Checkbox to include/exclude this course for new hires */}
@@ -259,60 +240,55 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
 
         {/* Document & Video Viewer Container */}
         <div className="bg-white border border-[#D5E3E0] rounded-md shadow-xs overflow-hidden flex flex-col">
-          {/* Top Document Toolbar */}
+          {/* Top Document Toolbar (Only functional controls: Type indicator, Zoom, Page Counter) */}
           <div className="bg-[#F7FAFA] border-b border-[#E2ECE9] px-4 py-2 flex items-center justify-between text-slate-500">
-            <div className="flex items-center gap-4">
-              <span className="p-1 text-slate-500">
-                <PanelLeft className="w-4 h-4" />
-              </span>
-              <span className="h-4 w-px bg-slate-300" />
-              <span className="p-1 text-slate-500">
+            <div className="flex items-center gap-3">
+              <span className="p-1 text-slate-500 inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F766E]">
                 {currentLesson.videoUrl ? (
-                  <PlayCircle className="w-4 h-4 text-[#0D9488]" />
+                  <>
+                    <PlayCircle className="w-4 h-4 text-[#0D9488]" />
+                    <span>Video</span>
+                  </>
                 ) : (
-                  <FileText className="w-4 h-4" />
+                  <>
+                    <FileText className="w-4 h-4 text-[#0D9488]" />
+                    <span>Documento</span>
+                  </>
                 )}
               </span>
 
+              <span className="h-4 w-px bg-slate-300" />
+
               <div className="flex items-center gap-2 bg-[#E6F0EE] px-2.5 py-1 rounded text-xs font-medium text-[#0F172A]">
-                <span className="font-mono tabular-nums">{zoom}%</span>
                 <button
                   type="button"
                   onClick={() => setZoom((z) => Math.max(75, z - 10))}
-                  className="hover:text-[#0D9488]"
+                  className="hover:text-[#0D9488] cursor-pointer"
                   title="Reducir zoom"
                 >
                   <ZoomOut className="w-3.5 h-3.5" />
                 </button>
+                <span className="font-mono tabular-nums">{zoom}%</span>
                 <button
                   type="button"
                   onClick={() => setZoom((z) => Math.min(125, z + 10))}
-                  className="hover:text-[#0D9488]"
+                  className="hover:text-[#0D9488] cursor-pointer"
                   title="Aumentar zoom"
                 >
                   <ZoomIn className="w-3.5 h-3.5" />
                 </button>
               </div>
-
-              <span className="p-1 text-slate-500 hidden sm:inline-flex">
-                <Hand className="w-4 h-4" />
-              </span>
-              <span className="p-1 bg-[#E6F0EE] rounded text-[#0F766E] hidden sm:inline-flex">
-                <Maximize2 className="w-4 h-4" />
-              </span>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center">
               <span className="text-xs text-slate-500 font-mono tabular-nums">
                 Página {activeIndex + 1} de {lessons.length}
               </span>
-              <Search className="w-4 h-4 text-slate-500" />
-              <Settings className="w-4 h-4 text-slate-500" />
             </div>
           </div>
 
           {/* Document Stage with Centered Study Guide / Video Sheet */}
-          <div className="bg-[#E3ECEA] p-4 sm:p-8 flex justify-center overflow-y-auto min-h-[470px]">
+          <div className="bg-[#E3ECEA] p-4 sm:p-8 flex justify-center overflow-y-auto min-h-[500px]">
             <div
               style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'top center' }}
               className="w-full max-w-[640px] transition-transform"
@@ -328,22 +304,13 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                     <div className="text-xs font-bold tracking-[0.2em] uppercase text-white/95">
                       ODONTOGUÍA
                     </div>
-                    <div className="text-[11px] tracking-[0.15em] uppercase text-teal-100/80">
-                      MANUAL DE CAPACITACIÓN INTERNA
-                    </div>
                   </div>
 
-                  <div className="relative z-10 space-y-3 my-auto py-8">
+                  <div className="relative z-10 space-y-4 my-auto py-8">
                     <h1 className="text-xl sm:text-2xl font-extrabold leading-snug">
                       {procedure.title}
                     </h1>
-                    <p className="text-sm font-semibold text-teal-100">
-                      {procedure.department}
-                    </p>
-                    <p className="text-xs text-white/80 pt-1">
-                      Guía Operativa · Bloque I
-                    </p>
-                    <p className="text-xs text-white/90 max-w-md mx-auto leading-relaxed pt-3">
+                    <p className="text-xs sm:text-sm text-white/90 max-w-md mx-auto leading-relaxed">
                       {currentLesson.instruction}
                     </p>
 
@@ -425,8 +392,7 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                   </div>
 
                   {/* Sheet Footer */}
-                  <div className="pt-8 mt-6 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400">
-                    <span>Guía Oficial de Capacitación Clínica</span>
+                  <div className="pt-8 mt-6 border-t border-slate-100 flex items-center justify-end text-xs">
                     {activeIndex < lessons.length - 1 ? (
                       <button
                         type="button"
@@ -448,45 +414,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                 </div>
               )}
             </div>
-          </div>
-
-          {/* Bottom Comments Section */}
-          <div className="bg-white border-t border-[#D5E3E0] p-6 space-y-3">
-            <h3 className="text-sm font-semibold text-[#1E293B]">
-              Notas y observaciones sobre este contenido
-            </h3>
-            <div className="bg-[#F2F7F6] rounded p-3.5 text-xs text-[#475569]">
-              Espacio para anotar dudas o recordatorios prácticos durante tu capacitación en la clínica.
-            </div>
-
-            {savedComments.length > 0 && (
-              <div className="space-y-2 pt-1">
-                {savedComments.map((c, i) => (
-                  <div
-                    key={i}
-                    className="text-xs bg-teal-50/70 border border-teal-200 text-slate-800 px-3 py-2 rounded"
-                  >
-                    {c}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            <form onSubmit={handleAddComment} className="flex gap-2 pt-1">
-              <input
-                type="text"
-                value={commentText}
-                onChange={(e) => setCommentText(e.target.value)}
-                placeholder="Escribe una nota sobre este paso..."
-                className="flex-1 px-3 py-2 text-xs bg-white border border-slate-300 rounded focus:outline-none focus:border-[#0D9488]"
-              />
-              <button
-                type="submit"
-                className="px-4 py-2 text-xs font-semibold text-white bg-[#0D9488] hover:bg-[#0F766E] rounded transition-colors cursor-pointer"
-              >
-                Guardar nota
-              </button>
-            </form>
           </div>
         </div>
       </div>
