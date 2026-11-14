@@ -422,13 +422,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                         })}
                       </div>
                     )}
-
-                    {currentLesson.keyCheck && (
-                      <div className="p-4 rounded-lg bg-teal-50/80 border border-teal-200 text-xs sm:text-sm text-teal-950">
-                        <span className="font-bold">Punto clave a verificar: </span>
-                        <span>{currentLesson.keyCheck}</span>
-                      </div>
-                    )}
                   </div>
 
                   {/* Sheet Footer */}
