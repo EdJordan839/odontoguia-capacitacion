@@ -1,4 +1,3 @@
-// @ts-nocheck -- código importado tal cual desde el repositorio cursosclinica
 import React, { useState } from 'react';
 import { X, Monitor, Wrench, Plus, Trash2 } from 'lucide-react';
 import {

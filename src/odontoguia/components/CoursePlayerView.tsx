@@ -1,4 +1,3 @@
-// @ts-nocheck -- código importado tal cual desde el repositorio cursosclinica
 import React, { useState } from 'react';
 import {
   Check,
@@ -12,6 +11,7 @@ import {
   Settings,
   ExternalLink,
   CheckCircle2,
+  PlayCircle,
 } from 'lucide-react';
 import { DentalProcedure } from '../data/procedures';
 
@@ -26,12 +26,13 @@ interface CoursePlayerViewProps {
 
 interface LessonItem {
   id: string;
-  kind: 'Guía' | 'Módulo' | 'Documento';
+  kind: 'Video' | 'Guía' | 'Módulo' | 'Documento';
   label: string;
   section?: string;
   instruction: string;
   bullets?: string[];
   keyCheck?: string;
+  videoUrl?: string;
   isCover?: boolean;
   isGoldenRules?: boolean;
 }
@@ -45,10 +46,32 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
   onMarkCourseCompleted,
 }) => {
   const lessons: LessonItem[] = [
+    ...(procedure.videoUrl
+      ? [
+          {
+            id: `${procedure.id}-video-principal`,
+            kind: 'Video' as const,
+            label: 'Video 1: Demostración de cambio de tóner (Brother DCP-L2540DW)',
+            section: 'Video Capacitación Presencial',
+            instruction:
+              'Reproduce el video para ver cómo apagar el equipo Brother DCP-L2540DW, extraer la bandeja completa, liberar el cartucho usado desde la pestañita verde e instalar el reemplazo TN-660 quitando el protector naranja.',
+            bullets: [
+              '1. Equipo apagado (Brother DCP-L2540DW): Levantar la tapa superior y abrir la tapita frontal.',
+              '2. Extraer toda la bandeja: Sujetar del centro y jalar hacia atrás/afuera para sacar la unidad de tambor (DR-630) con el tóner y apoyarla en una mesa plana.',
+              '3. Botar el tóner usado: Presionar la pestañita/botoncito verde del lado izquierdo de la bandeja para liberar y retirar el cartucho agotado.',
+              '4. Quitar plástico naranja del tóner nuevo: Sacar el reemplazo TN-660 de su bolsa y quitarle el protector naranja de donde se sujeta en la bandeja.',
+              '5. Colocar hasta que truene y limpiar: Poner el tóner nuevo parejo en las pestañitas blancas, presionar hacia abajo hasta que truene (clic), limpiar el polvo exterior con un poquito de alcohol y volver a meter la bandeja.',
+            ],
+            keyCheck:
+              'Tóner nuevo presionado hasta que truene en el seguro verde y polvo exterior limpiado con un poco de alcohol.',
+            videoUrl: procedure.videoUrl,
+          },
+        ]
+      : []),
     {
       id: `${procedure.id}-portada`,
       kind: 'Documento',
-      label: 'Presentación y Filosofía del Sistema',
+      label: 'Presentación y Filosofía del Módulo',
       instruction: procedure.philosophy || procedure.summary,
       bullets: procedure.toolsRequired.map((t) => `Requisito / Herramienta: ${t}`),
       keyCheck: `Ubicación / Sistema: ${procedure.locationOrSystem}`,
@@ -103,7 +126,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
   };
 
   const handleFinishCourse = () => {
-    // Mark all lessons viewed, mark course completed, and return to the menu
     const allViewed = Object.fromEntries(lessons.map((l) => [l.id, true]));
     setViewedIds(allViewed);
     onMarkCourseCompleted(procedure.id);
@@ -127,7 +149,7 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
 
   return (
     <div className="min-h-[calc(100vh-57px)] flex flex-row items-stretch bg-[#EEF4F3] text-[#1E293B] overflow-x-auto">
-      {/* LEFT SIDEBAR: Two-column layout with fresh Clinical Teal & Slate palette */}
+      {/* LEFT SIDEBAR: Always left column side-by-side with right viewer */}
       <aside className="w-[300px] sm:w-[320px] shrink-0 bg-[#F7FAFA] border-r border-[#D5E3E0] flex flex-col justify-between">
         <div>
           {/* Top Block Header */}
@@ -210,7 +232,7 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
         </div>
       </aside>
 
-      {/* RIGHT MAIN CONTENT AREA: ANTERIOR | SIGUIENTE + Document Viewer */}
+      {/* RIGHT MAIN CONTENT AREA: ANTERIOR | SIGUIENTE + Document/Video Viewer */}
       <div className="flex-1 flex flex-col min-w-0 px-4 sm:px-8 py-5 space-y-4">
         {/* Top Bar: ANTERIOR — SIGUIENTE */}
         <div className="flex items-center justify-between text-sm sm:text-base font-bold text-[#0F766E] px-1">
@@ -244,7 +266,7 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
           </button>
         </div>
 
-        {/* Document Viewer Container */}
+        {/* Document & Video Viewer Container */}
         <div className="bg-white border border-[#D5E3E0] rounded-md shadow-xs overflow-hidden flex flex-col">
           {/* Top Document Toolbar */}
           <div className="bg-[#F7FAFA] border-b border-[#E2ECE9] px-4 py-2 flex items-center justify-between text-slate-500">
@@ -254,7 +276,11 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
               </span>
               <span className="h-4 w-px bg-slate-300" />
               <span className="p-1 text-slate-500">
-                <FileText className="w-4 h-4" />
+                {currentLesson.videoUrl ? (
+                  <PlayCircle className="w-4 h-4 text-[#0D9488]" />
+                ) : (
+                  <FileText className="w-4 h-4" />
+                )}
               </span>
 
               <div className="flex items-center gap-2 bg-[#E6F0EE] px-2.5 py-1 rounded text-xs font-medium text-[#0F172A]">
@@ -294,14 +320,14 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
             </div>
           </div>
 
-          {/* Document Stage with Centered Study Guide Sheet */}
+          {/* Document Stage with Centered Study Guide / Video Sheet */}
           <div className="bg-[#E3ECEA] p-4 sm:p-8 flex justify-center overflow-y-auto min-h-[470px]">
             <div
               style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'top center' }}
-              className="w-full max-w-[540px] transition-transform"
+              className="w-full max-w-[640px] transition-transform"
             >
               {currentLesson.isCover ? (
-                /* COVER SHEET: Clinical Teal & Deep Slate gradient (distinct from UMOV purple) */
+                /* COVER SHEET */
                 <div className="bg-gradient-to-br from-[#0F766E] via-[#0D9488] to-[#1E293B] text-white rounded-sm shadow-lg min-h-[520px] p-10 flex flex-col justify-between items-center text-center relative overflow-hidden">
                   <div className="absolute -left-20 -bottom-20 w-80 h-80 rounded-full border border-white/15 pointer-events-none" />
                   <div className="absolute -right-16 -top-16 w-72 h-72 rounded-full border border-white/15 pointer-events-none" />
@@ -353,9 +379,9 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                   </div>
                 </div>
               ) : (
-                /* CONTENT SHEET: Clean white study-guide page with Teal accents */
-                <div className="bg-white text-[#1E293B] rounded-sm shadow-lg min-h-[520px] p-8 sm:p-10 flex flex-col justify-between border border-slate-200">
-                  <div className="space-y-6">
+                /* CONTENT & VIDEO SHEET */
+                <div className="bg-white text-[#1E293B] rounded-sm shadow-lg min-h-[520px] p-6 sm:p-9 flex flex-col justify-between border border-slate-200">
+                  <div className="space-y-5">
                     <div className="border-b-2 border-[#0D9488] pb-4">
                       <div className="text-[11px] font-bold uppercase tracking-wider text-[#0D9488]">
                         {currentLesson.section || procedure.title}
@@ -364,6 +390,20 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                         {currentLesson.label}
                       </h1>
                     </div>
+
+                    {/* Embedded Video Player when lesson has videoUrl */}
+                    {currentLesson.videoUrl && (
+                      <div className="rounded-lg overflow-hidden bg-slate-950 border border-slate-300 shadow-sm">
+                        <video
+                          src={currentLesson.videoUrl}
+                          controls
+                          playsInline
+                          className="w-full max-h-[380px] mx-auto bg-black"
+                        >
+                          Tu navegador no soporta la reproducción de video.
+                        </video>
+                      </div>
+                    )}
 
                     <p className="text-sm text-[#334155] leading-relaxed font-medium">
                       {currentLesson.instruction}

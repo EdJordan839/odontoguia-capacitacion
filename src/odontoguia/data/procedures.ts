@@ -35,6 +35,7 @@ export interface DentalProcedure {
   title: string;
   summary: string;
   externalUrl?: string;
+  videoUrl?: string;
   philosophy?: string;
   modality: Modality;
   department: Department;
@@ -210,64 +211,95 @@ export const INITIAL_PROCEDURES: DentalProcedure[] = [
   {
     id: 'proc-toner-impresora',
     code: 'SOP-OP-01',
-    title: 'Cambio de tóner de la impresora',
+    title: 'Cambio de tóner de la impresora (Brother DCP-L2540DW)',
     summary:
-      'Procedimiento presencial para reemplazar el cartucho de tóner agotado, limpiar el hilo corona y verificar que las recetas e historias clínicas salgan sin manchas.',
+      'Video demostrativo y guía paso a paso para retirar la bandeja de tambor, reemplazar el cartucho de tóner TN-660 y limpiar residuos en la impresora Brother DCP-L2540DW.',
+    videoUrl: '/assets/aistudio/WhatsApp_Video_2026-11-10_at_9.02.53_PM_50fdd14a.mp4',
+    philosophy:
+      'Para cambiar el tóner de la impresora multifuncional Brother modelo DCP-L2540DW es indispensable tener el equipo apagado antes de abrir la cubierta frontal, liberar el cartucho usando la pestañita verde lateral y asegurarse de retirar el protector naranja del repuesto nuevo antes de presionarlo hasta que truene.',
     modality: 'operativo',
     department: 'Equipos y Soporte',
     targetRole: 'Todo el Personal',
-    durationMinutes: 10,
-    frequency: 'Cada ~2,500 impresiones o aviso en pantalla',
-    locationOrSystem: 'Módulo de Recepción — Impresora Multifuncional Láser',
+    durationMinutes: 5,
+    frequency: 'Cada vez que el equipo indique reemplazo de tóner',
+    locationOrSystem: 'Impresora Brother modelo DCP-L2540DW (Tambor DR-630 / Tóner TN-660)',
     toolsRequired: [
-      'Cartucho de tóner nuevo (Ref. TN-760 en armario de papelería)',
-      'Guantes de nitrilo desechables',
-      'Bolsa plástica para guardar el cartucho usado',
+      'Impresora Brother DCP-L2540DW apagada',
+      'Cartucho de tóner de reemplazo TN-660',
+      'Un poco de alcohol y paño/papel para limpiar polvo exterior del tóner',
     ],
     steps: [
       {
         id: 'toner-1',
-        title: '1. Verificar el aviso en pantalla y dejar encendida la impresora',
+        section: 'Procedimiento en Impresora Brother DCP-L2540DW',
+        title: '1. Apagar el equipo y abrir las cubiertas frontal y superior',
         instruction:
-          'Confirma en el panel de la impresora el mensaje "Reemplazar Tóner". Colócate guantes de nitrilo y deja la impresora encendida para que detecte el cambio.',
-        keyCheck: 'La impresora permanece encendida y tienes el repuesto nuevo a la mano.',
+          'Antes de manipular el interior de la impresora Brother DCP-L2540DW, verifica que esté apagada y abre el acceso frontal:',
+        bullets: [
+          'Tener apagado el equipo: Verifica en el panel superior que la impresora Brother modelo DCP-L2540DW se encuentre completamente apagada.',
+          'Abrir las cubiertas: Levanta ligeramente la cubierta de arriba (escáner) y baja hacia adelante la tapita frontal para dejar descubierto el compartimento del tóner.',
+        ],
+        keyCheck: 'Equipo apagado y tapita delantera completamente abierta.',
       },
       {
         id: 'toner-2',
-        title: '2. Abrir la cubierta frontal y extraer el tambor con el tóner',
+        section: 'Procedimiento en Impresora Brother DCP-L2540DW',
+        title: '2. Jalar y extraer toda la bandeja (tambor + tóner)',
         instruction:
-          'Presiona el botón de apertura frontal, sujeta el asa verde del conjunto de unidad de tambor y deslízalo hacia afuera con ambas manos sobre una superficie plana sin tocar el rodillo verde.',
-        keyCheck: 'Conjunto extraído horizontalmente sin tocar el rodillo verde inferior.',
+          'Retira el conjunto completo del interior de la impresora y apóyalo en una mesa firme:',
+        bullets: [
+          'Sujetar del asa verde: Localiza la manija con etiqueta verde en el centro del conjunto.',
+          'Jalar hacia atrás/afuera: Jala suavemente hacia ti para que salga toda la bandejita completa (unidad de tambor DR-630 con el cartucho de tóner montado).',
+          'Apoyar en superficie plana: Coloca la bandeja sobre el escritorio a un lado de la impresora para trabajar cómodamente.',
+        ],
+        keyCheck: 'Bandeja completa colocada sobre una superficie plana y estable.',
       },
       {
         id: 'toner-3',
-        title: '3. Separar el tóner vacío presionando la palanca lateral',
+        section: 'Procedimiento en Impresora Brother DCP-L2540DW',
+        title: '3. Presionar la pestañita verde para botar el tóner usado',
         instruction:
-          'Empuja hacia abajo la palanca de bloqueo lateral en el tambor, retira el cartucho usado y guárdalo de inmediato en la bolsa plástica.',
-        keyCheck: 'El cartucho agotado queda embolsado sin derramar polvo.',
+          'Libera el cartucho agotado de la bandeja del tambor sin forzar las piezas:',
+        bullets: [
+          'Localizar el seguro verde: En el costado izquierdo de la bandeja (junto a la etiqueta verde DR-630) se encuentra una pestañita/botoncito verde.',
+          'Botar el cartucho: Presiona esa pestañita verde hacia abajo; escucharás cómo se libera el seguro y podrás levantar y sacar el tóner vacío.',
+        ],
+        keyCheck: 'Tóner agotado retirado de la bandeja presionando la pestañita verde.',
       },
       {
         id: 'toner-4',
-        title: '4. Colocar el tóner nuevo y deslizar la lengüeta limpiadora',
+        section: 'Procedimiento en Impresora Brother DCP-L2540DW',
+        title: '4. Desempacar el tóner nuevo y quitar el plástico protector naranja',
         instruction:
-          'Agita suavemente el tóner nuevo de lado a lado 5 veces, retira el protector naranja y encájalo hasta escuchar un clic. Desliza la lengüeta verde de extremo a extremo 3 veces y regrésala a la flecha inicial (▲).',
-        keyCheck: 'Lengüeta verde alineada exactamente con la flecha (▲) antes de cerrar.',
+          'Prepara el cartucho de reemplazo TN-660 antes de montarlo en la bandeja:',
+        bullets: [
+          'Sacar de la bolsa protectora: Extrae el tóner nuevo de su empaque (es normal que traiga un poquito de polvo de tinta por fuera).',
+          'Botar el protector naranja: Retira la cubierta de plástico naranja que protege la parte inferior del cartucho, ya que de esa zona es justo de donde se va a agarrar dentro de la bandeja.',
+        ],
+        keyCheck: 'Plástico protector naranja completamente retirado del tóner nuevo.',
       },
       {
         id: 'toner-5',
-        title: '5. Reinsertar el conjunto e imprimir hoja de prueba',
+        section: 'Procedimiento en Impresora Brother DCP-L2540DW',
+        title: '5. Colocar el tóner parejo hasta que truene, limpiar con alcohol y reinsertar',
         instruction:
-          'Introduce el conjunto en la impresora, cierra la cubierta frontal, espera 20 segundos a que calibre e imprime una hoja de prueba.',
-        keyCheck: 'Impresión nítida y el estado marca 100% de nivel de tóner.',
+          'Instala el cartucho nuevo en la bandeja, limpia cualquier exceso de polvo y devuélvelo a la impresora:',
+        bullets: [
+          'Alinear con las pestañitas blancas: Coloca el tóner nuevo tal cual estaba el anterior, cuidando que quede lo más parejo posible y que bajen las pestañitas blancas laterales.',
+          'Presionar hasta que truene: Empuja ligeramente el cartucho hacia abajo hasta escuchar que truene (clic) y quede bien sujeto por el seguro verde.',
+          'Limpiar polvo exterior con alcohol: Es recomendable limpiar el polvo de tóner que haya quedado por fuera de la carcasa usando un poquito de alcohol.',
+          'Reinsertar la bandeja: Vuelve a introducir toda la bandeja dentro de la impresora y cierra la tapita frontal.',
+        ],
+        keyCheck: 'El tóner nuevo tronó en su seguro, se limpió el polvo exterior con alcohol y la bandeja volvió a colocarse en la impresora.',
       },
     ],
     verification: {
       question:
-        '¿Qué ocurre si olvidas regresar la lengüeta verde a su posición inicial (▲) antes de cerrar la impresora?',
+        'En la impresora Brother DCP-L2540DW, ¿qué debes hacer para liberar el tóner usado y qué pieza debes quitarle al tóner nuevo antes de colocarlo?',
       options: [
-        'Aparecerá una línea negra vertical en todas las hojas impresas',
-        'La impresora se apaga automáticamente por seguridad',
-        'El papel saldrá completamente en blanco',
+        'Presionar la pestañita verde lateral para botar el usado, y quitarle el plástico protector naranja al tóner nuevo antes de presionarlo hasta que truene',
+        'Desatornillar la tapa trasera con desarmador y dejar puesto el plástico naranja',
+        'Cambiar el tóner con la impresora imprimiendo sin sacar la bandeja',
       ],
       correctIndex: 0,
     },

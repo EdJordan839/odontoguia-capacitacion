@@ -5,16 +5,17 @@ import { CourseIllustration } from './components/CourseIllustration';
 import { CoursePlayerView } from './components/CoursePlayerView';
 import { NewProcedureModal } from './components/NewProcedureModal';
 
-const STORAGE_KEY_PROCEDURES = 'odontoguia_procedures_v3';
-const STORAGE_KEY_SELECTED_PLAN = 'odontoguia_selected_plan_v3';
-const STORAGE_KEY_COMPLETED = 'odontoguia_completed_v3';
+const STORAGE_KEY_CUSTOM_PROCEDURES = 'odontoguia_custom_procedures_v5';
+const STORAGE_KEY_SELECTED_PLAN = 'odontoguia_selected_plan_v5';
+const STORAGE_KEY_COMPLETED = 'odontoguia_completed_v5';
 
 export default function App() {
   const [loaded, setLoaded] = useState(false);
   const [procedures, setProcedures] = useState<DentalProcedure[]>(INITIAL_PROCEDURES);
-
-  const [selectedIds, setSelectedIds] = useState<string[]>(['proc-alta-paciente-virtual', 'proc-toner-impresora']);
-
+  const [selectedIds, setSelectedIds] = useState<string[]>([
+    'proc-alta-paciente-virtual',
+    'proc-toner-impresora',
+  ]);
   const [completedIds, setCompletedIds] = useState<string[]>([]);
 
   const [filterMode, setFilterMode] = useState<'actuales' | 'asignados' | 'aprobados'>('actuales');
@@ -25,18 +26,32 @@ export default function App() {
   const [isNewProcedureOpen, setIsNewProcedureOpen] = useState<boolean>(false);
   const [completionNotice, setCompletionNotice] = useState<string | null>(null);
 
-
   useEffect(() => {
-    const read = (k: string) => { try { const s = localStorage.getItem(k); return s ? JSON.parse(s) : null; } catch { return null; } };
-    const p = read(STORAGE_KEY_PROCEDURES); if (Array.isArray(p) && p.length > 0) setProcedures(p);
-    const s = read(STORAGE_KEY_SELECTED_PLAN); if (Array.isArray(s)) setSelectedIds(s);
-    const c = read(STORAGE_KEY_COMPLETED); if (Array.isArray(c)) setCompletedIds(c);
+    const read = (k: string) => {
+      try {
+        const s = localStorage.getItem(k);
+        return s ? JSON.parse(s) : null;
+      } catch {
+        return null;
+      }
+    };
+    const p = read(STORAGE_KEY_CUSTOM_PROCEDURES);
+    if (Array.isArray(p) && p.length > 0) {
+      const initialIds = new Set(INITIAL_PROCEDURES.map((item) => item.id));
+      const customOnly = p.filter((item: DentalProcedure) => !initialIds.has(item.id));
+      setProcedures([...customOnly, ...INITIAL_PROCEDURES]);
+    }
+    const s = read(STORAGE_KEY_SELECTED_PLAN);
+    if (Array.isArray(s)) setSelectedIds(s);
+    const c = read(STORAGE_KEY_COMPLETED);
+    if (Array.isArray(c)) setCompletedIds(c);
     setLoaded(true);
   }, []);
+
   useEffect(() => {
     if (!loaded) return;
     try {
-      localStorage.setItem(STORAGE_KEY_PROCEDURES, JSON.stringify(procedures));
+      localStorage.setItem(STORAGE_KEY_CUSTOM_PROCEDURES, JSON.stringify(procedures));
     } catch {
       // ignore
     }
