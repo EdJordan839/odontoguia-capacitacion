@@ -46,28 +46,6 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
   onMarkCourseCompleted,
 }) => {
   const lessons: LessonItem[] = [
-    ...(procedure.videoUrl
-      ? [
-          {
-            id: `${procedure.id}-video-principal`,
-            kind: 'Video' as const,
-            label: 'Video 1: Demostración de cambio de tóner (Brother DCP-L2540DW)',
-            section: 'Video Capacitación Presencial',
-            instruction:
-              'Reproduce el video para ver cómo apagar el equipo Brother DCP-L2540DW, extraer la bandeja completa, liberar el cartucho usado desde la pestañita verde e instalar el reemplazo TN-660 quitando el protector naranja.',
-            bullets: [
-              '1. Equipo apagado (Brother DCP-L2540DW): Levantar la tapa superior y abrir la tapita frontal.',
-              '2. Extraer toda la bandeja: Sujetar del centro y jalar hacia atrás/afuera para sacar la unidad de tambor (DR-630) con el tóner y apoyarla en una mesa plana.',
-              '3. Botar el tóner usado: Presionar la pestañita/botoncito verde del lado izquierdo de la bandeja para liberar y retirar el cartucho agotado.',
-              '4. Quitar plástico naranja del tóner nuevo: Sacar el reemplazo TN-660 de su bolsa y quitarle el protector naranja de donde se sujeta en la bandeja.',
-              '5. Colocar hasta que truene y limpiar: Poner el tóner nuevo parejo en las pestañitas blancas, presionar hacia abajo hasta que truene (clic), limpiar el polvo exterior con un poquito de alcohol y volver a meter la bandeja.',
-            ],
-            keyCheck:
-              'Tóner nuevo presionado hasta que truene en el seguro verde y polvo exterior limpiado con un poco de alcohol.',
-            videoUrl: procedure.videoUrl,
-          },
-        ]
-      : []),
     {
       id: `${procedure.id}-portada`,
       kind: 'Documento',
@@ -77,6 +55,19 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
       keyCheck: `Ubicación / Sistema: ${procedure.locationOrSystem}`,
       isCover: true,
     },
+    ...(procedure.videoUrl
+      ? [
+          {
+            id: `${procedure.id}-video-principal`,
+            kind: 'Video' as const,
+            label: 'Video 1: Demostración de cambio de tóner (Brother DCP-L2540DW)',
+            section: 'Video Capacitación Presencial',
+            instruction:
+              'Demostración práctica en video del procedimiento en la impresora multifuncional Brother DCP-L2540DW. Puedes consultar cada paso detallado de forma individual en el menú de la izquierda.',
+            videoUrl: procedure.videoUrl,
+          },
+        ]
+      : []),
     ...procedure.steps.map((s) => ({
       id: s.id,
       kind: (s.section ? 'Módulo' : 'Guía') as 'Módulo' | 'Guía',
@@ -338,7 +329,7 @@ export const CoursePlayerView: React.FC<CoursePlayerViewProps> = ({
                       OD
                     </div>
                     <div className="text-xs font-bold tracking-[0.2em] uppercase text-white/95">
-                      ODONTOGUÍA CLÍNICA
+                      ODONTOGUÍA
                     </div>
                     <div className="text-[11px] tracking-[0.15em] uppercase text-teal-100/80">
                       MANUAL DE CAPACITACIÓN INTERNA

@@ -150,7 +150,7 @@ export default function App() {
           }}
           className="font-display text-lg font-bold tracking-tight text-[#0F172A] whitespace-nowrap shrink-0"
         >
-          Clínica Dental
+          OdontoGuía
         </a>
 
         <nav className="flex items-center gap-6 text-sm font-semibold text-[#5A6B68]">
