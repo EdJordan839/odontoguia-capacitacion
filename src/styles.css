@@ -5,14 +5,14 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * YES I'AM — Consultoría de Imagen & Marca Personal.
+ * OdontoGuía — Capacitación y Procesos Clínicos.
  * Paleta Editorial Luxury: Warm Cream (#F6F4EE) + Obsidian Black (#111111) + Champagne Gold (#C5A880).
  */
 
 @theme inline {
-  --font-display: "Cormorant Garamond", "Times New Roman", serif;
-  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
-  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Public Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -308,4 +308,8 @@
   .animate-fade-soft {
     animation: none !important;
   }
+}
+
+@layer base {
+  h1, h2, h3, h4, .font-display { font-family: var(--font-display); text-wrap: balance; }
 }

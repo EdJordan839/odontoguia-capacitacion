@@ -14,18 +14,6 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
-import { AnnouncementBar } from "@/components/site/AnnouncementBar";
-import { SiteHeader } from "@/components/site/SiteHeader";
-import { SiteFooter } from "@/components/site/SiteFooter";
-import { MobileMenu } from "@/components/site/MobileMenu";
-import { SearchDialog } from "@/components/site/SearchDialog";
-import { CartDrawer } from "@/components/site/CartDrawer";
-import { QuickViewDialog } from "@/components/product/QuickViewDialog";
-import { WhatsAppFloatingButton } from "@/components/site/WhatsAppFloatingButton";
-import { BookingModal } from "@/components/site/BookingModal";
-import { CatalogProvider } from "@/store/catalog-store";
-import { CartProvider } from "@/store/cart-store";
-import { UIProvider } from "@/store/ui-store";
 
 function NotFoundComponent() {
   return (
@@ -90,13 +78,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#111111" },
-      { title: "YES I'AM — Consultoría de Imagen & Marca Personal" },
-      {
-        name: "description",
-        content: "Consultoría de imagen ejecutiva, personal branding, estilismo de negocios, oratoria y dirección de arte editorial.",
-      },
-      { property: "og:site_name", content: "YES I'AM" },
+      { name: "theme-color", content: "#0f766e" },
+      { title: "OdontoGuía — Capacitación y Procesos Clínicos" },
+      { name: "description", content: "Plataforma de capacitación y estandarización de procesos para personal nuevo de clínica dental." },
+      { property: "og:site_name", content: "OdontoGuía" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -105,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap",
       },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
@@ -123,7 +108,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-slate-50 text-slate-900 antialiased selection:bg-teal-700 selection:text-white">
         {/* Activa las animaciones de revelado sólo cuando hay JS disponible */}
         <ScriptOnce>{`document.documentElement.classList.add('js')`}</ScriptOnce>
         {children}
@@ -135,35 +120,10 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-
   return (
     <QueryClientProvider client={queryClient}>
-      <CatalogProvider>
-        <CartProvider>
-          <UIProvider>
-            <div className="flex min-h-screen flex-col">
-              <a
-                href="#contenido"
-                className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
-              >
-                Saltar al contenido
-              </a>
-              <main id="contenido" className="flex-1">
-                {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-                <Outlet />
-              </main>
-              <SiteFooter />
-            </div>
-            <MobileMenu />
-            <SearchDialog />
-            <CartDrawer />
-            <QuickViewDialog />
-            <BookingModal />
-            <WhatsAppFloatingButton />
-            <Toaster position="bottom-center" />
-          </UIProvider>
-        </CartProvider>
-      </CatalogProvider>
+      <Outlet />
+      <Toaster position="bottom-center" />
     </QueryClientProvider>
   );
 }
